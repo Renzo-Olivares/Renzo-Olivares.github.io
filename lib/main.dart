@@ -1,21 +1,30 @@
 import 'package:flutter_web/material.dart';
+import 'package:personal_web_test/HomeMobile.dart';
+import 'package:personal_web_test/HomeDesktop.dart';
+import 'package:personal_web_test/HomeTablet.dart';
+import 'package:personal_web_test/ResponsiveWidget.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+ class MyApp extends StatelessWidget {
+   final title = 'Renzo Olivares';
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'Renzo Olivares (Developer)',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Colors.white,
+        accentColor: Colors.blueAccent,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: ResponsiveWidget(HomeMobile(title), HomeTablet(title), HomeDesktop(title)),
     );
   }
 }
 
+/*
 class MyHomePage extends StatelessWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
@@ -59,3 +68,4 @@ class MyHomePage extends StatelessWidget {
     );
   }
 }
+ */
