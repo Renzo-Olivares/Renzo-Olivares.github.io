@@ -26,9 +26,17 @@ class NavDrawer extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 23.0),
-                  child: Center(child: Text('Renzo Olivares')),
+                  child: Center(
+                      child: Text(
+                    'Renzo Olivares',
+                    style: TextStyle(color: Colors.white),
+                  )),
                 ),
-                Center(child: Text('Computer Science Student')),
+                Center(
+                    child: Text(
+                  'Computer Science Student',
+                  style: TextStyle(color: Colors.white),
+                )),
               ],
             ),
           ),
