@@ -35871,12 +35871,8 @@ return new Z.vX(T.Nt(H.b([new T.pX(new K.uW(new M.i6("https://drive.google.com/u
 R.CJ.prototype={
 L:function(a){return new A.yF(new R.CK(this),null)}}
 R.CK.prototype={
-$2:function(a,b){var u,t=b.b
-if(t<450)return this.a.c
-else{t=t<1024&&t>450
-u=this.a
-if(t)return u.d
-else return u.e}},
+$2:function(a,b){if(b.b>800)return this.a.e
+else return this.a.c},
 $C:"$2",
 $R:2}
 F.zD.prototype={
