@@ -16,7 +16,7 @@ void main() => runApp(MyApp());
       debugShowCheckedModeBanner: false,
       title: 'Renzo Olivares (Developer)',
       theme: ThemeData(
-        primaryColor: Colors.white,
+        primaryColor: Colors.indigo,
         accentColor: Colors.blueAccent,
       ),
       home: ResponsiveWidget(HomeMobile(title), HomeTablet(title), HomeDesktop(title)),
