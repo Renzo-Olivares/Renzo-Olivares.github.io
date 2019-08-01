@@ -1,22 +1,36 @@
 import 'package:flutter_web/material.dart';
 
-class NavDrawer extends StatelessWidget{
-  NavDrawer({Key key}) : super(key:key);
-  
+class NavDrawer extends StatelessWidget {
+  NavDrawer({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Drawer(
       child: Column(
         children: <Widget>[
-          UserAccountsDrawerHeader(
-            currentAccountPicture: CircleAvatar(
-                radius: 30,
-                backgroundImage: NetworkImage(
-                    "https://drive.google.com/uc?id=1Sny9mEihMEIzlhHQMWCzV4hO3dpQ5tkT"),
-              ),
-            accountName: Text('Renzo Olivares'),
-            accountEmail: Text('Computer Science Student'),
+          DrawerHeader(
+            decoration: BoxDecoration(
+              color: Theme.of(context).primaryColor,
+            ),
+            child: ListView(
+              children: <Widget>[
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 10.0),
+                    child: CircleAvatar(
+                      radius: 30.0,
+                      backgroundImage: NetworkImage(
+                          "https://drive.google.com/uc?id=1Sny9mEihMEIzlhHQMWCzV4hO3dpQ5tkT"),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 23.0),
+                  child: Center(child: Text('Renzo Olivares')),
+                ),
+                Center(child: Text('Computer Science Student')),
+              ],
+            ),
           ),
           Flexible(
             child: MediaQuery.removePadding(
