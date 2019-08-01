@@ -34,7 +34,11 @@ void main() => runApp(MyApp());
         primaryColor: customColor,
         accentColor: Colors.blueAccent,
       ),
-      home: ResponsiveWidget(HomeMobile(title), HomeTablet(title), HomeDesktop(title)),
+      home: ResponsiveWidget(
+        mobileScreen: HomeMobile(brand: title), 
+        tabletScreen: HomeTablet(brand: title), 
+        desktopScreen: HomeDesktop(brand: title)
+        ),
     );
   }
 }

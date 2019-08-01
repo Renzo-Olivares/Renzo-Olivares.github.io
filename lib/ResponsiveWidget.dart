@@ -5,7 +5,7 @@ class ResponsiveWidget extends StatelessWidget{
   Widget tabletScreen;
   Widget desktopScreen;
 
-  ResponsiveWidget(this.mobileScreen, this.tabletScreen, this.desktopScreen);
+  ResponsiveWidget({Key key, this.mobileScreen, this.tabletScreen, @required this.desktopScreen}): super(key:key);
 
   @override
   Widget build(BuildContext context) {

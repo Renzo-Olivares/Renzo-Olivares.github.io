@@ -2,9 +2,9 @@ import 'package:flutter_web/material.dart';
 import 'package:personal_web_test/NavDrawer.dart';
 
 class HomeMobile extends StatelessWidget {
-  String title;
+  String brand;
 
-  HomeMobile(this.title);
+  HomeMobile({Key key, this.brand}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class HomeMobile extends StatelessWidget {
       drawer: NavDrawer(),
       appBar: AppBar(
         elevation: 1.0,
-        title: Text(title),
+        title: Text(brand),
       ),
     );
   }

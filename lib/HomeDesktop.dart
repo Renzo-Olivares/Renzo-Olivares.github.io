@@ -1,16 +1,16 @@
 import 'package:flutter_web/material.dart';
 
 class HomeDesktop extends StatelessWidget{
-  String title;
+  String brand;
 
-  HomeDesktop(this.title);
+  HomeDesktop({Key key, this.brand}) : super(key:key);
   
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text(brand),
       ),
     );
   }
