@@ -8,36 +8,58 @@ class NavDrawer extends StatelessWidget {
     return Drawer(
       child: Column(
         children: <Widget>[
-          DrawerHeader(
-            decoration: BoxDecoration(
-              color: Theme.of(context).primaryColor,
-            ),
-            child: ListView(
-              children: <Widget>[
-                Center(
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 10.0),
-                    child: CircleAvatar(
-                      radius: 30.0,
-                      backgroundImage: NetworkImage(
-                          "https://drive.google.com/uc?id=1Sny9mEihMEIzlhHQMWCzV4hO3dpQ5tkT"),
+          SizedBox(
+            height: 250,
+            child: DrawerHeader(
+              decoration: BoxDecoration(
+                color: Theme.of(context).primaryColor,
+              ),
+              child: ListView(
+                physics: ScrollPhysics(parent: NeverScrollableScrollPhysics()),
+                children: <Widget>[
+                  Center(
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 25.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(color: Colors.black.withOpacity(0.2),
+                            blurRadius: 5.0)
+                          ],
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            width: 4.0,
+                            color: Colors.blue[700],
+                          ),
+                        ),
+                        child: CircleAvatar(
+                          radius: 50.0,
+                          backgroundImage: NetworkImage(
+                              "https://drive.google.com/uc?id=1Sny9mEihMEIzlhHQMWCzV4hO3dpQ5tkT"),
+                        ),
+                      ),
                     ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 23.0),
-                  child: Center(
+                  Padding(
+                    padding: const EdgeInsets.only(top: 16.0),
+                    child: Center(
+                        child: Text(
+                      'Renzo Olivares',
+                      style: TextStyle(
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.white),
+                    )),
+                  ),
+                  Center(
                       child: Text(
-                    'Renzo Olivares',
-                    style: TextStyle(color: Colors.white),
+                    'Computer Science Student',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w200,
+                      color: Colors.white),
                   )),
-                ),
-                Center(
-                    child: Text(
-                  'Computer Science Student',
-                  style: TextStyle(color: Colors.white),
-                )),
-              ],
+                ],
+              ),
             ),
           ),
           Flexible(
@@ -45,6 +67,7 @@ class NavDrawer extends StatelessWidget {
               context: context,
               removeTop: true,
               child: ListView(
+                padding: EdgeInsets.only(left: 10.0, right: 10.0),
                 children: <Widget>[
                   ListTile(
                     leading: Icon(Icons.person),
