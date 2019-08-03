@@ -23,8 +23,9 @@ class NavDrawer extends StatelessWidget {
                       child: Container(
                         decoration: BoxDecoration(
                           boxShadow: [
-                            BoxShadow(color: Colors.black.withOpacity(0.2),
-                            blurRadius: 5.0)
+                            BoxShadow(
+                                color: Colors.black.withOpacity(0.2),
+                                blurRadius: 5.0)
                           ],
                           shape: BoxShape.circle,
                           border: Border.all(
@@ -46,17 +47,16 @@ class NavDrawer extends StatelessWidget {
                         child: Text(
                       'Renzo Olivares',
                       style: TextStyle(
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.white),
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.white),
                     )),
                   ),
                   Center(
                       child: Text(
                     'Computer Science Student',
                     style: TextStyle(
-                      fontWeight: FontWeight.w200,
-                      color: Colors.white),
+                        fontWeight: FontWeight.w200, color: Colors.white),
                   )),
                 ],
               ),
