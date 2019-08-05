@@ -1,6 +1,5 @@
 import 'package:flutter_web/material.dart';
 import 'package:personal_web_test/RootDrawer.dart';
-import 'package:personal_web_test/CustomCircleAvatar.dart';
 
 class NavDrawer extends StatefulWidget {
   final GlobalKey<NavigatorState> navigator;
@@ -12,7 +11,7 @@ class NavDrawer extends StatefulWidget {
 }
 
 class _NavDrawerState extends State<NavDrawer> {
-  static String drawerPosition = '/';
+  static String drawerPosition = '/about';
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +19,8 @@ class _NavDrawerState extends State<NavDrawer> {
       [
         "About",
         Icons.person_outline,
-        '/',
-        drawerPosition == '/',
+        '/about',
+        drawerPosition == '/about',
       ],
       [
         "Projects",
@@ -47,7 +46,9 @@ class _NavDrawerState extends State<NavDrawer> {
       child: Column(
         children: <Widget>[
           SizedBox(
-            height: 250,
+            height: MediaQuery.of(context).orientation == Orientation.landscape
+                ? 210.0
+                : 250.0,
             child: DrawerHeader(
               margin: EdgeInsets.only(bottom: 0.0),
               decoration: BoxDecoration(
@@ -59,7 +60,25 @@ class _NavDrawerState extends State<NavDrawer> {
                   Center(
                     child: Padding(
                       padding: const EdgeInsets.only(top: 25.0),
-                      child: CustomCircleAvatar(size: 40.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.black.withOpacity(0.2),
+                                blurRadius: 5.0)
+                          ],
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            width: 4.0,
+                            color: Colors.blue[500],
+                          ),
+                        ),
+                        child: CircleAvatar(
+                          radius: 50.0,
+                          backgroundImage: NetworkImage(
+                              "https://drive.google.com/uc?id=1Sny9mEihMEIzlhHQMWCzV4hO3dpQ5tkT"),
+                        ),
+                      ),
                     ),
                   ),
                   Padding(
