@@ -35,4 +35,6 @@ class ContentStrings {
           "development. It also played a huge part in my decision to major\n" +
           "in Computer Science at the University of California, Riverside\n" +
           "where I am currently studying at.";
+
+  static String placeholder = "nothing to see here...";
 }

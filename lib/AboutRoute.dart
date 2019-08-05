@@ -7,6 +7,7 @@ class AboutRoute extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const title = "nothing to see here";
     return Scaffold(
       body: ListView(
         children: <Widget>[
@@ -41,7 +42,7 @@ class AboutRoute extends StatelessWidget {
                 fontWeight: FontWeight.w200,
                 fontSize: 19.0),
           ),
-          Text(ContentStrings.aboutBeg,
+          Text(ContentStrings.placeholder,
               style: TextStyle(fontWeight: FontWeight.w400)),
           Text(
             "Open Source:",
@@ -50,14 +51,14 @@ class AboutRoute extends StatelessWidget {
                 fontWeight: FontWeight.w200,
                 fontSize: 19.0),
           ),
-          Text(ContentStrings.aboutMid,
+          Text(ContentStrings.placeholder,
               style: TextStyle(fontWeight: FontWeight.w400)),
           Text("Now: ",
               style: TextStyle(
                   color: Theme.of(context).accentColor,
                   fontWeight: FontWeight.w200,
                   fontSize: 19.0)),
-          Text(ContentStrings.aboutEnd,
+          Text(ContentStrings.placeholder,
               style: TextStyle(fontWeight: FontWeight.w400))
         ],
       ),
