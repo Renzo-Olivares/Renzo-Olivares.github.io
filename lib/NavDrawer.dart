@@ -48,7 +48,7 @@ class _NavDrawerState extends State<NavDrawer> {
         children: <Widget>[
           SizedBox(
             height: MediaQuery.of(context).orientation == Orientation.landscape
-                ? 210.0
+                ? 190.0
                 : 250.0,
             child: DrawerHeader(
               margin: EdgeInsets.only(bottom: 0.0),
