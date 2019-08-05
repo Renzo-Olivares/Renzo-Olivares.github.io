@@ -35870,7 +35870,7 @@ aS:function(){return new K.rn(C.u)}}
 K.rn.prototype={
 L:function(a){var u,t,s,r,q,p=null,o=$.Mv,n=H.b([["About",C.m2,"/",o==="/"],["Projects",C.lZ,"/projects",o==="/projects"],["Experience",C.m5,"/experience",o==="/experience"],["Resume",C.m3,"/resume",o==="/resume"]],[[P.w,,]])
 o=F.bZ(a,!1).a
-o=(o.a>o.b?C.ib:C.oo)===C.ib?210:250
+o=(o.a>o.b?C.ib:C.oo)===C.ib?190:250
 u=S.ey(p,p,p,K.ac(a).b,p,p,C.O)
 t=N.aF
 s=[t]
