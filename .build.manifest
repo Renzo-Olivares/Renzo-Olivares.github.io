@@ -271,6 +271,7 @@ packages/intl/src/data/dates/symbols/zu.json
 packages/kernel/binary/readme.md
 packages/kernel/target/readme.md
 packages/kernel/text/readme.md
+packages/outline_material_icons/outline_material_icons.ttf
 packages/package_resolver/src/test_package_config
 packages/pedantic/analysis_options.1.0.0.yaml
 packages/pedantic/analysis_options.1.1.0.yaml
