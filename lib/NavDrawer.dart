@@ -1,4 +1,5 @@
 import 'package:flutter_web/material.dart';
+import 'package:personal_web_test/CustomCircleAvatar.dart';
 import 'package:personal_web_test/RootDrawer.dart';
 
 class NavDrawer extends StatefulWidget {
@@ -11,7 +12,7 @@ class NavDrawer extends StatefulWidget {
 }
 
 class _NavDrawerState extends State<NavDrawer> {
-  static String drawerPosition = '/about';
+  static String drawerPosition = '/';
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +20,8 @@ class _NavDrawerState extends State<NavDrawer> {
       [
         "About",
         Icons.person_outline,
-        '/about',
-        drawerPosition == '/about',
+        '/',
+        drawerPosition == '/',
       ],
       [
         "Projects",
@@ -59,27 +60,10 @@ class _NavDrawerState extends State<NavDrawer> {
                 children: <Widget>[
                   Center(
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 25.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                                color: Colors.black.withOpacity(0.2),
-                                blurRadius: 5.0)
-                          ],
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            width: 4.0,
-                            color: Colors.blue[500],
-                          ),
-                        ),
-                        child: CircleAvatar(
-                          radius: 50.0,
-                          backgroundImage: NetworkImage(
-                              "https://drive.google.com/uc?id=1Sny9mEihMEIzlhHQMWCzV4hO3dpQ5tkT"),
-                        ),
-                      ),
-                    ),
+                        padding: const EdgeInsets.only(top: 25.0),
+                        child: CustomCircleAvatar(
+                          size: 40.0,
+                        )),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 16.0),
