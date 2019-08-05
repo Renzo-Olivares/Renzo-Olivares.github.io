@@ -14,7 +14,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Renzo Olivares (Developer)',
       home: ResponsiveWidget(
           mobileScreen: HomeMobile(brand: title),
           tabletScreen: HomeTablet(brand: title),
