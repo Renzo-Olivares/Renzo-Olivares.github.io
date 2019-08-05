@@ -15,10 +15,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Renzo Olivares (Developer)',
-      theme: ThemeData(
-        primaryColor: Colors.blue[700],
-        accentColor: Colors.blue[500],
-      ),
       home: ResponsiveWidget(
           mobileScreen: HomeMobile(brand: title),
           tabletScreen: HomeTablet(brand: title),

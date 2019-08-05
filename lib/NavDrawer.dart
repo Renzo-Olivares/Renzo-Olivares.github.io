@@ -1,18 +1,17 @@
 import 'package:flutter_web/material.dart';
-import 'package:personal_web_test/AboutRoute.dart';
-import 'package:personal_web_test/ProjectsRoute.dart';
-import 'package:personal_web_test/ExperienceRoute.dart';
-import 'package:personal_web_test/ResumeRoute.dart';
+import 'package:personal_web_test/RootDrawer.dart';
 
 class NavDrawer extends StatefulWidget {
-  NavDrawer({Key key}) : super(key: key);
+  final GlobalKey<NavigatorState> navigator;
+
+  NavDrawer({Key key, this.navigator}) : super(key: key);
 
   @override
   _NavDrawerState createState() => _NavDrawerState();
 }
 
 class _NavDrawerState extends State<NavDrawer> {
-  static int drawerPosition = 1;
+  static String drawerPosition = '/';
 
   @override
   Widget build(BuildContext context) {
@@ -20,26 +19,26 @@ class _NavDrawerState extends State<NavDrawer> {
       [
         "About",
         Icons.person_outline,
-        1,
-        drawerPosition == 1,
+        '/',
+        drawerPosition == '/',
       ],
       [
         "Projects",
         Icons.developer_mode,
-        2,
-        drawerPosition == 2,
+        '/projects',
+        drawerPosition == '/projects',
       ],
       [
         "Experience",
         Icons.work,
-        3,
-        drawerPosition == 3,
+        '/experience',
+        drawerPosition == '/experience',
       ],
       [
         "Resume",
         Icons.description,
-        4,
-        drawerPosition == 4,
+        '/resume',
+        drawerPosition == '/resume',
       ],
     ];
 
@@ -108,7 +107,6 @@ class _NavDrawerState extends State<NavDrawer> {
               child: Container(
                 color: Colors.blue[500],
                 child: ListView(
-                  //padding: EdgeInsets.only(left: 10.0, right: 10.0),
                   children: drawerSections.map(createDrawerSections).toList(),
                 ),
               ),
@@ -121,8 +119,8 @@ class _NavDrawerState extends State<NavDrawer> {
 
   Widget createDrawerSections(List<dynamic> sections) {
     return Card(
-      color: sections[3]? Colors.blue[600] : Colors.transparent,
-      elevation: sections[3]? 1.0: 0.0,
+      color: sections[3] ? Colors.blue[600] : Colors.transparent,
+      elevation: sections[3] ? 1.0 : 0.0,
       child: ListTile(
         contentPadding: EdgeInsets.only(right: 30.0, left: 30.0),
         onTap: () => setDrawerPosition(sections[2]),
@@ -135,34 +133,14 @@ class _NavDrawerState extends State<NavDrawer> {
     );
   }
 
-  void pushRoute() {
-    if (Navigator.of(context).canPop()) {
-      Navigator.of(context).pop();
-    }
+  void setDrawerPosition(String newPosition) {
+    final state = RootDrawer.of(context);
 
-    Navigator.of(context).push(MaterialPageRoute(
-      builder: (BuildContext context) {
-        switch (drawerPosition) {
-          case 1:
-            return AboutRoute();
-          case 2:
-            return ProjectsRoute();
-          case 3:
-            return ExperienceRoute();
-          case 4:
-            return ResumeRoute();
-          default:
-            return AboutRoute();
-        }
-      },
-    ));
-  }
-
-  void setDrawerPosition(int newPosition) {
     setState(() {
       drawerPosition = newPosition;
     });
 
-    pushRoute();
+    widget.navigator.currentState.pushReplacementNamed(drawerPosition);
+    state.close();
   }
 }
