@@ -1,9 +1,10 @@
 import 'package:flutter_web/material.dart';
 import 'package:personal_web_test/Helpers/ContentStrings.dart';
 import 'package:personal_web_test/Widgets/CustomCircleAvatar.dart';
+import 'package:personal_web_test/Widgets/SocialRow.dart';
 
 class AboutRoute extends StatelessWidget {
-  AboutRoute({Key key}) : super(key: key);
+  const AboutRoute({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +45,9 @@ class AboutRoute extends StatelessWidget {
                   fontSize: 20.0),
             ),
             Text(ContentStrings.placeholder,
-                style: TextStyle(fontWeight: FontWeight.w400))
+                style: TextStyle(fontWeight: FontWeight.w400)),
+            SizedBox(height: 50),
+            SocialRow(),
           ],
         ),
       ),

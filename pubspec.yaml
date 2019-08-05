@@ -7,6 +7,13 @@ environment:
   
 flutter_web:
   uses-material-design: true
+  assets:
+    - AssetManifest.json
+    - FontManifest.json
+    - fonts/MaterialIcons-Regular.ttf
+    - images/github-logo.png
+    - images/xda-logo.png
+    - images/linkedin-logo.png
 
 dependencies:
   flutter_web: any
