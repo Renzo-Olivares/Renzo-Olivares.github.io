@@ -1,7 +1,6 @@
 import 'package:flutter_web/material.dart';
 import 'package:personal_web_test/CustomCircleAvatar.dart';
 import 'package:personal_web_test/RootDrawer.dart';
-import 'package:outline_material_icons/outline_material_icons.dart';
 
 class NavDrawer extends StatefulWidget {
   final GlobalKey<NavigatorState> navigator;
@@ -26,19 +25,19 @@ class _NavDrawerState extends State<NavDrawer> {
       ],
       [
         "Projects",
-        OMIcons.developerMode,
+        Icons.developer_mode,
         '/projects',
         drawerPosition == '/projects',
       ],
       [
         "Experience",
-        OMIcons.workOutline,
+        Icons.work,
         '/experience',
         drawerPosition == '/experience',
       ],
       [
         "Resume",
-        OMIcons.description,
+        Icons.description,
         '/resume',
         drawerPosition == '/resume',
       ],

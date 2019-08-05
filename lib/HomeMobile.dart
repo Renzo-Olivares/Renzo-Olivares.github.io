@@ -6,7 +6,7 @@ import 'package:personal_web_test/ExperienceRoute.dart';
 import 'package:personal_web_test/ResumeRoute.dart';
 
 class HomeMobile extends StatelessWidget {
-  String brand;
+  final String brand;
 
   HomeMobile({Key key, this.brand}) : super(key: key);
 

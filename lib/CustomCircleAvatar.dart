@@ -1,7 +1,7 @@
 import 'package:flutter_web/material.dart';
 
 class CustomCircleAvatar extends StatelessWidget {
-  double size;
+  final double size;
 
   CustomCircleAvatar({Key key, this.size}) : super(key: key);
 

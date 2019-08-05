@@ -1,15 +1,14 @@
 import 'package:flutter_web/material.dart';
 
 class ResponsiveWidget extends StatelessWidget{
-  Widget mobileScreen;
-  Widget tabletScreen;
-  Widget desktopScreen;
+  final Widget mobileScreen;
+  final Widget tabletScreen;
+  final Widget desktopScreen;
 
   ResponsiveWidget({Key key, this.mobileScreen, this.tabletScreen, @required this.desktopScreen}): super(key:key);
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return LayoutBuilder(
       builder: (context, constraints) {
         if (constraints.maxWidth > 800) {
