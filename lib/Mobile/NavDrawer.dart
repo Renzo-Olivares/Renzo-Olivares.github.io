@@ -1,6 +1,6 @@
 import 'package:flutter_web/material.dart';
-import 'package:personal_web_test/CustomCircleAvatar.dart';
-import 'package:personal_web_test/RootDrawer.dart';
+import 'package:personal_web_test/Widgets/CustomCircleAvatar.dart';
+import 'package:personal_web_test/Helpers/RootDrawer.dart';
 
 class NavDrawer extends StatefulWidget {
   final GlobalKey<NavigatorState> navigator;
@@ -19,7 +19,7 @@ class _NavDrawerState extends State<NavDrawer> {
     List<List<dynamic>> drawerSections = [
       [
         "About",
-        Icons.person_outline,
+        Icons.person,
         '/',
         drawerPosition == '/',
       ],

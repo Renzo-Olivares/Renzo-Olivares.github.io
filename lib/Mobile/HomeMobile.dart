@@ -1,9 +1,9 @@
 import 'package:flutter_web/material.dart';
-import 'package:personal_web_test/NavDrawer.dart';
-import 'package:personal_web_test/AboutRoute.dart';
-import 'package:personal_web_test/ProjectsRoute.dart';
-import 'package:personal_web_test/ExperienceRoute.dart';
-import 'package:personal_web_test/ResumeRoute.dart';
+import 'package:personal_web_test/Mobile/NavDrawer.dart';
+import 'package:personal_web_test/Routes/AboutRoute.dart';
+import 'package:personal_web_test/Routes/ProjectsRoute.dart';
+import 'package:personal_web_test/Routes/ExperienceRoute.dart';
+import 'package:personal_web_test/Routes/ResumeRoute.dart';
 
 class HomeMobile extends StatelessWidget {
   final String brand;

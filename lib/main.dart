@@ -1,8 +1,8 @@
 import 'package:flutter_web/material.dart';
-import 'package:personal_web_test/HomeMobile.dart';
-import 'package:personal_web_test/HomeDesktop.dart';
-import 'package:personal_web_test/HomeTablet.dart';
-import 'package:personal_web_test/ResponsiveWidget.dart';
+import 'package:personal_web_test/Mobile/HomeMobile.dart';
+import 'package:personal_web_test/Desktop/HomeDesktop.dart';
+import 'package:personal_web_test/Tablets/HomeTablet.dart';
+import 'package:personal_web_test/Helpers/ResponsiveWidget.dart';
 
 void main() => runApp(MyApp());
 
