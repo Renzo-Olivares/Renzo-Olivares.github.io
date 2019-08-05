@@ -1,6 +1,7 @@
 import 'package:flutter_web/material.dart';
 import 'package:personal_web_test/CustomCircleAvatar.dart';
 import 'package:personal_web_test/RootDrawer.dart';
+import 'package:outline_material_icons/outline_material_icons.dart';
 
 class NavDrawer extends StatefulWidget {
   final GlobalKey<NavigatorState> navigator;
@@ -25,19 +26,19 @@ class _NavDrawerState extends State<NavDrawer> {
       ],
       [
         "Projects",
-        Icons.developer_mode,
+        OMIcons.developerMode,
         '/projects',
         drawerPosition == '/projects',
       ],
       [
         "Experience",
-        Icons.work,
+        OMIcons.workOutline,
         '/experience',
         drawerPosition == '/experience',
       ],
       [
         "Resume",
-        Icons.description,
+        OMIcons.description,
         '/resume',
         drawerPosition == '/resume',
       ],
@@ -49,7 +50,7 @@ class _NavDrawerState extends State<NavDrawer> {
           SizedBox(
             height: MediaQuery.of(context).orientation == Orientation.landscape
                 ? 190.0
-                : 250.0,
+                : 220.0,
             child: DrawerHeader(
               margin: EdgeInsets.only(bottom: 0.0),
               decoration: BoxDecoration(

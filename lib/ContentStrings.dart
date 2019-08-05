@@ -1,5 +1,5 @@
 class ContentStrings {
-  static String aboutBeg =
+  static const String aboutBeg =
       "\tWhen I was 14 I received my first smartphone, the HTC Droid\n" +
           "Incredible, and started on my journey of software development.\n" +
           "I was amazed by the capabilities of the android operating system,\n" +
@@ -11,7 +11,7 @@ class ContentStrings {
           "was open source. There I realized that I did not just want to run\n" +
           "other people’s modifications, I wanted to create my own.\n\n";
 
-  static String aboutMid =
+  static const String aboutMid =
       "\tI used the plethora of android tools available on XDA\n" +
           "Developers to do just that. I began experimenting with different\n" +
           "tools, and asking developers on XDA for guidance. Soon I was\n" +
@@ -19,7 +19,7 @@ class ContentStrings {
           "my own custom version of Android from the Android Open Source\n" +
           "Project souces.\n\n";
 
-  static String aboutEnd =
+  static const String aboutEnd =
       "\tI built android modifications and posted most of my work and\n" +
           "source on XDA and Github. I also had the opportunity to\n" +
           "collaborate with many talented open source developers. One of\n" +
@@ -36,5 +36,5 @@ class ContentStrings {
           "in Computer Science at the University of California, Riverside\n" +
           "where I am currently studying at.";
 
-  static String placeholder = "nothing to see here...";
+  static const String placeholder = "nothing to see here...";
 }
