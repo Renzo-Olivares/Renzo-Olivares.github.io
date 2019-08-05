@@ -1,5 +1,6 @@
 import 'package:flutter_web/material.dart';
 import 'package:personal_web_test/RootDrawer.dart';
+import 'package:personal_web_test/CustomCircleAvatar.dart';
 
 class NavDrawer extends StatefulWidget {
   final GlobalKey<NavigatorState> navigator;
@@ -58,25 +59,7 @@ class _NavDrawerState extends State<NavDrawer> {
                   Center(
                     child: Padding(
                       padding: const EdgeInsets.only(top: 25.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                                color: Colors.black.withOpacity(0.2),
-                                blurRadius: 5.0)
-                          ],
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            width: 4.0,
-                            color: Colors.blue[500],
-                          ),
-                        ),
-                        child: CircleAvatar(
-                          radius: 50.0,
-                          backgroundImage: NetworkImage(
-                              "https://drive.google.com/uc?id=1Sny9mEihMEIzlhHQMWCzV4hO3dpQ5tkT"),
-                        ),
-                      ),
+                      child: CustomCircleAvatar(size: 40.0),
                     ),
                   ),
                   Padding(

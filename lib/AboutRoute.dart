@@ -1,34 +1,19 @@
 import 'package:flutter_web/material.dart';
 import 'package:personal_web_test/ContentStrings.dart';
+import 'package:personal_web_test/CustomCircleAvatar.dart';
 
 class AboutRoute extends StatelessWidget {
+  AboutRoute({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       body: ListView(
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
             child: Center(
-              child: Container(
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                        color: Colors.black.withOpacity(0.2), blurRadius: 5.0)
-                  ],
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                    width: 4.0,
-                    color: Colors.blue[500],
-                  ),
-                ),
-                child: CircleAvatar(
-                  radius: 80.0,
-                  backgroundImage: NetworkImage(
-                      "https://drive.google.com/uc?id=1Sny9mEihMEIzlhHQMWCzV4hO3dpQ5tkT"),
-                ),
-              ),
+              child: CustomCircleAvatar(size: 80.0),
             ),
           ),
           Padding(
