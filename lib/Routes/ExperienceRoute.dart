@@ -29,9 +29,25 @@ class ExperienceRoute extends StatelessWidget {
     ];
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-        child: ListView(
-          children: companies.map(createInfoCards).toList(),
+        padding: const EdgeInsets.only(right: 20.0, left: 20.0, top: 10.0),
+        child: Column(
+          children: <Widget>[
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                "Experience",
+                style: TextStyle(
+                    color: Theme.of(context).primaryColor,
+                    fontWeight: FontWeight.w100,
+                    fontSize: 25.0),
+              ),
+            ),
+            Expanded(
+              child: ListView(
+                children: companies.map(createInfoCards).toList(),
+              ),
+            ),
+          ],
         ),
       ),
     );

@@ -14,7 +14,7 @@ class AboutRoute extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.only(top: 8.0),
+              padding: const EdgeInsets.only(top: 10.0),
               child: Center(
                 child: CustomCircleAvatar(size: 80.0),
               ),
