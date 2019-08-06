@@ -2,8 +2,11 @@
 assets/AssetManifest.json
 assets/FontManifest.json
 assets/fonts/MaterialIcons-Regular.ttf
+assets/images/codeforfun-logo.png
 assets/images/github-logo.png
+assets/images/kipp-logo.png
 assets/images/linkedin-logo.png
+assets/images/schoolzilla-logo.png
 assets/images/xda-logo.png
 index.html
 main.dart.js
