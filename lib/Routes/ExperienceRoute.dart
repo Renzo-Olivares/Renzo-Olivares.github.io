@@ -34,12 +34,15 @@ class ExperienceRoute extends StatelessWidget {
           children: <Widget>[
             Align(
               alignment: Alignment.centerLeft,
-              child: Text(
-                "Experience",
-                style: TextStyle(
-                    color: Theme.of(context).primaryColor,
-                    fontWeight: FontWeight.w100,
-                    fontSize: 25.0),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 5.0),
+                child: Text(
+                  "Experience",
+                  style: TextStyle(
+                      color: Theme.of(context).primaryColor,
+                      fontWeight: FontWeight.w100,
+                      fontSize: 25.0),
+                ),
               ),
             ),
             Expanded(

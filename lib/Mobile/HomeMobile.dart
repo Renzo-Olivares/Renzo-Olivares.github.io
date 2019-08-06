@@ -31,7 +31,10 @@ class HomeMobile extends StatelessWidget {
           drawer:
               NavDrawer(navigator: (child.key as GlobalKey<NavigatorState>)),
           appBar: AppBar(
-            title: Text("Renzo Olivares"),
+            title: Text(
+              "Renzo Olivares",
+              style: TextStyle(fontWeight: FontWeight.w300),
+            ),
           ),
           body: child,
         );

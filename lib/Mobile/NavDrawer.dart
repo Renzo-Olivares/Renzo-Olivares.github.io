@@ -72,7 +72,7 @@ class _NavDrawerState extends State<NavDrawer> {
                       'Renzo Olivares',
                       style: TextStyle(
                           fontSize: 16.0,
-                          fontWeight: FontWeight.w400,
+                          fontWeight: FontWeight.w300,
                           color: Colors.white),
                     )),
                   ),
