@@ -10,7 +10,7 @@ class CircleIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 2.0),
+      padding: EdgeInsets.symmetric(horizontal: 6.0),
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(color: Colors.blue[400], blurRadius: 5.0)

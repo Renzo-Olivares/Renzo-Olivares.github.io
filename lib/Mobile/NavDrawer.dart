@@ -108,7 +108,7 @@ class _NavDrawerState extends State<NavDrawer> {
       color: sections[3] ? Colors.blue[600] : Colors.transparent,
       elevation: sections[3] ? 1.0 : 0.0,
       child: ListTile(
-        contentPadding: EdgeInsets.only(right: 30.0, left: 30.0),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 30.0),
         onTap: () => setDrawerPosition(sections[2]),
         leading: Icon(sections[1]),
         title: Text(
