@@ -6,7 +6,8 @@ class InfoCard extends StatelessWidget {
   String info;
   bool padding;
 
-  InfoCard({Key key, this.icon, this.companyName, this.info, this.padding}) : super(key: key);
+  InfoCard({Key key, this.icon, this.companyName, this.info, this.padding})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,9 @@ class InfoCard extends StatelessWidget {
           Card(
             elevation: 2.0,
             child: Padding(
-              padding: padding? const EdgeInsets.all(2.0): const EdgeInsets.all(0.0),
+              padding: padding
+                  ? const EdgeInsets.all(2.0)
+                  : const EdgeInsets.all(0.0),
               child: ImageIcon(icon, size: 96.0),
             ),
           ),
