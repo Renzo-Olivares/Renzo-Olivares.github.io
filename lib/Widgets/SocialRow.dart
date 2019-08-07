@@ -10,7 +10,7 @@ class SocialRow extends StatelessWidget {
     List<List<dynamic>> socialSites = [
       [
         AssetImage('images/github-logo.png'),
-        'renzo.olivares1@gmail.com',
+        'https://github.com/Renzo-Olivares',
         'Github',
       ],
       [
