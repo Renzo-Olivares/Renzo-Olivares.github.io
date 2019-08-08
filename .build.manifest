@@ -1,6 +1,7 @@
 .packages
 assets/AssetManifest.json
 assets/FontManifest.json
+assets/documents/Renzo-Olivares_Tech_Resume.pdf
 assets/fonts/MaterialIcons-Regular.ttf
 assets/images/codeforfun-logo.png
 assets/images/ftwitter.png
@@ -8,6 +9,7 @@ assets/images/funits.png
 assets/images/github-logo.png
 assets/images/kipp-logo.png
 assets/images/linkedin-logo.png
+assets/images/resume.png
 assets/images/schoolzilla-logo.png
 assets/images/simpleshow.png
 assets/images/xda-logo.png
