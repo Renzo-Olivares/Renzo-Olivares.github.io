@@ -33,7 +33,7 @@ class HomeMobile extends StatelessWidget {
           appBar: AppBar(
             title: Text(
               "Renzo Olivares",
-              style: TextStyle(fontWeight: FontWeight.w300),
+              style: TextStyle(fontWeight: FontWeight.w400),
             ),
           ),
           body: child,

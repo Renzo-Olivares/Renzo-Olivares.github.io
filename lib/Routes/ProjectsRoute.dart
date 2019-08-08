@@ -1,25 +1,30 @@
 import 'package:flutter_web/material.dart';
+import 'package:personal_web_test/Helpers/ContentStrings.dart';
+import 'package:personal_web_test/Widgets/ProjectCard.dart';
+import 'package:personal_web_test/Widgets/PageLayout.dart';
 
 class ProjectsRoute extends StatelessWidget {
+  final String title = "Projects";
   const ProjectsRoute({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0),
-        child: Column(
-          children: <Widget>[
-            Text(
-              "Projects",
-              style: TextStyle(
-                  color: Theme.of(context).primaryColor,
-                  fontWeight: FontWeight.w100,
-                  fontSize: 25.0),
-            ),
-          ],
-        ),
-      ),
+    List<List<dynamic>> projects = [
+      ['Simple ToDo', 'images/simpleshow.png'],
+      ['Flutter Units', 'images/funits.png'],
+      ['Flutter Twitter', 'images/ftwitter.png'],
+    ];
+
+    return PageLayout(
+      header: title,
+      widgetList: projects.map(createProjectWidget).toList(),
+    );
+  }
+
+  Widget createProjectWidget(List<dynamic> project) {
+    return ProjectCard(
+      title: project[0],
+      image: project[1],
     );
   }
 }

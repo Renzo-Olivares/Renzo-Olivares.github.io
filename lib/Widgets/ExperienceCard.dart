@@ -1,12 +1,13 @@
 import 'package:flutter_web/material.dart';
 
-class InfoCard extends StatelessWidget {
+class ExperienceCard extends StatelessWidget {
   ImageProvider icon;
   String companyName;
   String info;
   bool padding;
 
-  InfoCard({Key key, this.icon, this.companyName, this.info, this.padding})
+  ExperienceCard(
+      {Key key, this.icon, this.companyName, this.info, this.padding})
       : super(key: key);
 
   @override

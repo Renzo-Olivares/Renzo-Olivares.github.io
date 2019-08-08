@@ -25,7 +25,7 @@ class AboutRoute extends StatelessWidget {
                 "Renzo Olivares",
                 style: TextStyle(
                     color: Theme.of(context).primaryColor,
-                    fontWeight: FontWeight.w300,
+                    fontWeight: FontWeight.w400,
                     fontSize: 25.0),
               ),
             ),
@@ -33,7 +33,7 @@ class AboutRoute extends StatelessWidget {
               "Bay Area, California",
               style: TextStyle(
                   color: Theme.of(context).primaryColor,
-                  fontWeight: FontWeight.w100,
+                  fontWeight: FontWeight.w300,
                   fontSize: 25.0),
             ),
             Container(height: 25),
@@ -41,7 +41,7 @@ class AboutRoute extends StatelessWidget {
               "About:",
               style: TextStyle(
                   color: Theme.of(context).accentColor,
-                  fontWeight: FontWeight.w200,
+                  fontWeight: FontWeight.w300,
                   fontSize: 20.0),
             ),
             Text(ContentStrings.placeholder,
