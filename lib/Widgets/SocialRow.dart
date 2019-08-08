@@ -1,6 +1,6 @@
 import 'package:flutter_web/material.dart';
 import 'package:personal_web_test/Widgets/CircleIconButton.dart';
-import 'dart:html' as html;
+import 'package:personal_web_test/Helpers/UrlLauncher.dart';
 
 class SocialRow extends StatelessWidget {
   const SocialRow({Key key}) : super(key: key);
@@ -33,11 +33,7 @@ class SocialRow extends StatelessWidget {
   Widget createSocialButton(List<dynamic> socialSite) {
     return CircleIconButton(
       icon: socialSite[0],
-      tapFunction: () => urlLauncher(socialSite[1], socialSite[2]),
+      tapFunction: () => UrlLauncher.launchURL(socialSite[1], socialSite[2]),
     );
-  }
-
-  void urlLauncher(String url, String name) {
-    html.window.open(url, name);
   }
 }
