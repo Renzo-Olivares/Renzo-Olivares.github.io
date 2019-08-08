@@ -20,8 +20,11 @@ class ProjectCard extends StatelessWidget {
           children: <Widget>[
             Card(
               elevation: 2.0,
-              child: Image.asset(
-                image,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Image.asset(
+                  image,
+                ),
               ),
             ),
             Card(
