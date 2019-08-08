@@ -9,7 +9,14 @@ class ResumeRoute extends StatelessWidget {
   Widget build(BuildContext context) {
     return PageLayout(
       header: title,
-      widgetList: <Widget>[],
+      widgetList: <Widget>[
+        Padding(
+          padding: const EdgeInsets.only(top: 8.0),
+          child: Card(
+            child: Image.asset('images/resume.png'),
+          ),
+        )
+      ],
     );
   }
 }
