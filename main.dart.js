@@ -36503,7 +36503,7 @@ S.BZ.prototype={
 I:function(a){var u=null,t=K.ad(a).r,s=[N.ao]
 return new T.be(C.cO,V.fE(T.vA(H.c([V.fE(new T.be(C.av,U.OA(this.e),u),u,2),V.fE(T.vA(H.c([new T.cI(C.e1,u,u,new T.be(C.m_,L.c5(this.c,A.c6(u,u,K.ad(a).r,u,u,u,u,u,u,u,17,u,C.bN,u,u,!0,u,u,u,u,u,u)),u),u),L.c5("nothing to see here...",u)],s),C.aQ),u,2)],s),C.aQ),t,4),u)}}
 T.pP.prototype={
-I:function(a){var u=null,t=H.c([[new L.dz("images/github-logo.png",u,u),"https://github.com/Renzo-Olivares","Github"],[new L.dz("images/xda-logo.png",u,u),"https://forum.xda-developers.com/search.php?searchid=457061086","XDA-Developers"],[new L.dz("images/linkedin-logo.png",u,u),"https://www.linkedin.com/in/510renzoolivares/","LinkedIn"]],[[P.t,,]])
+I:function(a){var u=null,t=H.c([[new L.dz("images/github-logo.png",u,u),"https://github.com/Renzo-Olivares","Github"],[new L.dz("images/xda-logo.png",u,u),"https://forum.xda-developers.com/member.php?u=3449508","XDA-Developers"],[new L.dz("images/linkedin-logo.png",u,u),"https://www.linkedin.com/in/510renzoolivares/","LinkedIn"]],[[P.t,,]])
 return T.Pd(new H.az(t,this.gHz(),[H.y(t,0),N.ao]).aU(0),C.bF,C.i6,C.bd)},
 HA:function(a){return N.O5(null,J.bT(a,0),null,new T.EH(a))}}
 T.EH.prototype={
