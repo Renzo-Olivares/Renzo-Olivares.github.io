@@ -15,7 +15,7 @@ class SocialRow extends StatelessWidget {
       ],
       [
         AssetImage('images/xda-logo.png'),
-        'https://forum.xda-developers.com/search.php?searchid=457061086',
+        'https://forum.xda-developers.com/member.php?u=3449508',
         'XDA-Developers',
       ],
       [
