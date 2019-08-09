@@ -3,9 +3,11 @@ import 'package:flutter_web/material.dart';
 class CircleIconButton extends StatelessWidget {
   ImageProvider icon;
   IconData altIcon;
+  double size;
   VoidCallback tapFunction;
 
-  CircleIconButton({Key key, this.icon, this.tapFunction, this.altIcon})
+  CircleIconButton(
+      {Key key, this.icon, this.tapFunction, this.altIcon, this.size})
       : super(key: key);
 
   @override
@@ -20,12 +22,15 @@ class CircleIconButton extends StatelessWidget {
           color: Colors.blue[700],
         ),
       ),
-      child: icon == null
-          ? Icon(altIcon)
-          : IconButton(
-              onPressed: tapFunction,
-              icon: ImageIcon(icon),
-            ),
+      child: IconButton(
+        onPressed: tapFunction,
+        icon: altIcon == null
+            ? ImageIcon(icon)
+            : Icon(
+                altIcon,
+                size: size,
+              ),
+      ),
     );
   }
 }

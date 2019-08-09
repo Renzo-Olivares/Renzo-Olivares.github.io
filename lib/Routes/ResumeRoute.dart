@@ -22,7 +22,12 @@ class ResumeRoute extends StatelessWidget {
           padding: const EdgeInsets.only(top: 20.0, bottom: 10.0),
           child: CircleIconButton(
             altIcon: Icons.file_download,
-            tapFunction: () => {UrlLauncher.launchURL('test', 'Resume')},
+            size: 28.0,
+            tapFunction: () => {
+              UrlLauncher.launchURL(
+                  'https://github.com/Renzo-Olivares/Renzo-Olivares.github.io/raw/site_source/web/assets/documents/Renzo-Olivares_Tech_Resume.pdf',
+                  'Resume')
+            },
           ),
         )
       ],
