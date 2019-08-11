@@ -1,13 +1,11 @@
 import 'package:flutter_web/material.dart';
 
 class ProjectCard extends StatelessWidget {
-  String title;
-  String info;
-  String image;
+  final String title;
+  final String info;
+  final String image;
 
-  ProjectCard(
-      {Key key, this.info = "nothing to see here...", this.image, this.title})
-      : super(key: key);
+  ProjectCard({Key key, this.info, this.image, this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

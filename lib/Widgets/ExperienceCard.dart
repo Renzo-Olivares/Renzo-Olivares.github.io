@@ -1,10 +1,10 @@
 import 'package:flutter_web/material.dart';
 
 class ExperienceCard extends StatelessWidget {
-  ImageProvider icon;
-  String companyName;
-  String info;
-  bool padding;
+  final ImageProvider icon;
+  final String companyName;
+  final String info;
+  final bool padding;
 
   ExperienceCard(
       {Key key, this.icon, this.companyName, this.info, this.padding})

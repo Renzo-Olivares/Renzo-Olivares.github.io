@@ -1,10 +1,10 @@
 import 'package:flutter_web/material.dart';
 
 class CircleIconButton extends StatelessWidget {
-  ImageProvider icon;
-  IconData altIcon;
-  double size;
-  VoidCallback tapFunction;
+  final ImageProvider icon;
+  final IconData altIcon;
+  final double size;
+  final VoidCallback tapFunction;
 
   CircleIconButton(
       {Key key, this.icon, this.tapFunction, this.altIcon, this.size})

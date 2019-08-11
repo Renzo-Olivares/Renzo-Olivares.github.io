@@ -1,11 +1,16 @@
 import 'package:flutter_web/material.dart';
 
-class ResponsiveWidget extends StatelessWidget{
+class ResponsiveWidget extends StatelessWidget {
   final Widget mobileScreen;
   final Widget tabletScreen;
   final Widget desktopScreen;
 
-  ResponsiveWidget({Key key, this.mobileScreen, this.tabletScreen, @required this.desktopScreen}): super(key:key);
+  ResponsiveWidget(
+      {Key key,
+      this.mobileScreen,
+      this.tabletScreen,
+      @required this.desktopScreen})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

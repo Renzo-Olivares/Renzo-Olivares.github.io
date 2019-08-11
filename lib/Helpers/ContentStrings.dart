@@ -28,7 +28,7 @@ class ContentStrings {
           "version of android for a When android customization was at its\n" +
           "peak we where able to pull in over 10,000 downloads for any given\n" +
           "release of our software. That of course dwindled overtime but that\n"
-          "was in huge part due to Android becoming a more polished\n" +
+              "was in huge part due to Android becoming a more polished\n" +
           "operating system. I greatly value the time I spent on XDA reverse\n" +
           "engineering Android, as it taught me a lot about the inner\n" +
           "workings of the Android operating system, and software.\n" +

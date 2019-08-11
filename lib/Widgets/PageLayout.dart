@@ -1,8 +1,8 @@
 import 'package:flutter_web/material.dart';
 
 class PageLayout extends StatelessWidget {
-  String header;
-  List<dynamic> widgetList;
+  final String header;
+  final List<dynamic> widgetList;
 
   PageLayout({Key key, this.header, this.widgetList}) : super(key: key);
 

@@ -25,6 +25,7 @@ class ProjectsRoute extends StatelessWidget {
     return ProjectCard(
       title: project[0],
       image: project[1],
+      info: ContentStrings.placeholder,
     );
   }
 }
