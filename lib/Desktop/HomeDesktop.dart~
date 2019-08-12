@@ -11,12 +11,6 @@ class HomeDesktop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<String> tabList = [
-      'About',
-      'Projects',
-      'Experience',
-      'Resume',
-    ];
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Renzo Olivares (Developer)',
@@ -24,8 +18,15 @@ class HomeDesktop extends StatelessWidget {
         primaryColor: Colors.blue[700],
         accentColor: Colors.blue[500],
       ),
-      home: Scaffold(
-        body: DefaultTabController(
+      initialRoute: '/',
+      routes: {
+        '/': (context) => AboutRoute(),
+        '/projects': (context) => ProjectsRoute(),
+        '/experience': (context) => ExperienceRoute(),
+        '/resume': (context) => ResumeRoute(),
+      },
+      builder: (context, child) {
+        return DefaultTabController(
           length: 4,
           child: Scaffold(
             appBar: AppBar(
@@ -45,31 +46,36 @@ class HomeDesktop extends StatelessWidget {
                   width: 450.0,
                   child: TabBar(
                     indicatorColor: Colors.white,
-                    tabs: tabList.map(_createTabs).toList(),
+                    tabs: <Widget>[
+                      Text(
+                        'About',
+                        style: TextStyle(
+                            fontSize: 13.0, fontWeight: FontWeight.w300),
+                      ),
+                      Text(
+                        'Projects',
+                        style: TextStyle(
+                            fontSize: 13.0, fontWeight: FontWeight.w300),
+                      ),
+                      Text(
+                        'Experience',
+                        style: TextStyle(
+                            fontSize: 13.0, fontWeight: FontWeight.w300),
+                      ),
+                      Text(
+                        'Resume',
+                        style: TextStyle(
+                            fontSize: 13.0, fontWeight: FontWeight.w300),
+                      ),
+                    ],
                   ),
                 )
               ],
             ),
-            body: TabBarView(
-              children: <Widget>[
-                AboutRoute(),
-                ProjectsRoute(),
-                ExperienceRoute(),
-                ResumeRoute(),
-              ],
-            ),
+            body: child,
           ),
-        ),
-      ),
-    );
-  }
-
-  Widget _createTabs(String tabName) {
-    return Tab(
-      child: Text(
-        tabName,
-        style: TextStyle(fontWeight: FontWeight.w300, fontSize: 13.0),
-      ),
+        );
+      },
     );
   }
 }
