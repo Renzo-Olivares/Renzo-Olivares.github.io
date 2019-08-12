@@ -1,0 +1,81 @@
+import 'package:flutter_web/material.dart';
+import 'package:personal_web_test/Routes/AboutRoute.dart';
+import 'package:personal_web_test/Routes/ProjectsRoute.dart';
+import 'package:personal_web_test/Routes/ExperienceRoute.dart';
+import 'package:personal_web_test/Routes/ResumeRoute.dart';
+
+class HomeDesktop extends StatelessWidget {
+  final String brand;
+
+  HomeDesktop({Key key, this.brand}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Renzo Olivares (Developer)',
+      theme: ThemeData(
+        primaryColor: Colors.blue[700],
+        accentColor: Colors.blue[500],
+      ),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => AboutRoute(),
+        '/projects': (context) => ProjectsRoute(),
+        '/experience': (context) => ExperienceRoute(),
+        '/resume': (context) => ResumeRoute(),
+      },
+      builder: (context, child) {
+        return DefaultTabController(
+          length: 4,
+          child: Scaffold(
+            appBar: AppBar(
+              actions: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(left: 15.0),
+                  child: Center(
+                      child: Text(
+                    "Renzo Olivares",
+                    style:
+                        TextStyle(fontSize: 18.0, fontWeight: FontWeight.w400),
+                  )),
+                ),
+                Spacer(),
+                Spacer(),
+                SizedBox(
+                  width: 450.0,
+                  child: TabBar(
+                    indicatorColor: Colors.white,
+                    tabs: <Widget>[
+                      Text(
+                        'About',
+                        style: TextStyle(
+                            fontSize: 13.0, fontWeight: FontWeight.w300),
+                      ),
+                      Text(
+                        'Projects',
+                        style: TextStyle(
+                            fontSize: 13.0, fontWeight: FontWeight.w300),
+                      ),
+                      Text(
+                        'Experience',
+                        style: TextStyle(
+                            fontSize: 13.0, fontWeight: FontWeight.w300),
+                      ),
+                      Text(
+                        'Resume',
+                        style: TextStyle(
+                            fontSize: 13.0, fontWeight: FontWeight.w300),
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+            body: child,
+          ),
+        );
+      },
+    );
+  }
+}
