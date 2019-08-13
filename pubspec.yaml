@@ -21,6 +21,7 @@ flutter_web:
     - images/ftwitter.png
     - images/funits.png
     - images/resume.png
+    - images/profile_picture.png
     - documents/Renzo-Olivares_Tech_Resume.pdf
 
 dependencies:

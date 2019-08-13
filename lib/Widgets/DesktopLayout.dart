@@ -1,10 +1,10 @@
 import 'package:flutter_web/material.dart';
 
-class PageLayout extends StatelessWidget {
+class DesktopLayout extends StatelessWidget {
   final String header;
   final List<Widget> widgetList;
 
-  PageLayout({Key key, this.header, this.widgetList}) : super(key: key);
+  DesktopLayout({Key key, this.header, this.widgetList}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,11 +26,25 @@ class PageLayout extends StatelessWidget {
                 ),
               ),
             ),
-            Expanded(
-              child: ListView(
-                children: widgetList,
+            Padding(
+              padding: header == 'Experience'
+                  ? EdgeInsets.only(
+                      left: MediaQuery.of(context).size.width / 5, bottom: 10.0)
+                  : EdgeInsets.all(0.0),
+              child: SizedBox(
+                height: 500.0,
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: widgetList,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            )
+            ),
           ],
         ),
       ),

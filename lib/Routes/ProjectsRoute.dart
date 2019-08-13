@@ -2,6 +2,8 @@ import 'package:flutter_web/material.dart';
 import 'package:personal_web_test/Helpers/ContentStrings.dart';
 import 'package:personal_web_test/Widgets/ProjectCard.dart';
 import 'package:personal_web_test/Widgets/PageLayout.dart';
+import 'package:personal_web_test/Helpers/ResponsiveWidget.dart';
+import 'package:personal_web_test/Widgets/DesktopLayout.dart';
 
 class ProjectsRoute extends StatelessWidget {
   final String title = "Projects";
@@ -15,9 +17,15 @@ class ProjectsRoute extends StatelessWidget {
       ['Flutter Twitter', 'images/ftwitter.png'],
     ];
 
-    return PageLayout(
-      header: title,
-      widgetList: projects.map(createProjectWidget).toList(),
+    return ResponsiveWidget(
+      mobileScreen: PageLayout(
+        header: title,
+        widgetList: projects.map(createProjectWidget).toList(),
+      ),
+      desktopScreen: DesktopLayout(
+        header: title,
+        widgetList: projects.map(createProjectWidget).toList(),
+      ),
     );
   }
 

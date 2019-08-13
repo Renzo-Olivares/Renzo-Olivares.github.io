@@ -2,6 +2,8 @@ import 'package:flutter_web/material.dart';
 import 'package:personal_web_test/Widgets/ExperienceCard.dart';
 import 'package:personal_web_test/Helpers/ContentStrings.dart';
 import 'package:personal_web_test/Widgets/PageLayout.dart';
+import 'package:personal_web_test/Helpers/ResponsiveWidget.dart';
+import 'package:personal_web_test/Widgets/DesktopLayout.dart';
 
 class ExperienceRoute extends StatelessWidget {
   final String title = "Experience";
@@ -10,7 +12,7 @@ class ExperienceRoute extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<List<dynamic>> companies = [
+    const List<List<dynamic>> companies = [
       [
         "Code for Fun",
         AssetImage('images/codeforfun-logo.png'),
@@ -30,18 +32,26 @@ class ExperienceRoute extends StatelessWidget {
         true,
       ]
     ];
-    return PageLayout(
-      header: title,
-      widgetList: companies.map(createExperienceCards).toList(),
+    return ResponsiveWidget(
+      mobileScreen: PageLayout(
+        header: title,
+        widgetList: companies.map(createExperienceCards).toList(),
+      ),
+      desktopScreen: DesktopLayout(
+        header: title,
+        widgetList: companies.map(createExperienceCards).toList(),
+      ),
     );
   }
 
   Widget createExperienceCards(List<dynamic> companies) {
-    return ExperienceCard(
-      companyName: companies[0],
-      icon: companies[1],
-      info: companies[2],
-      padding: companies[3],
+    return Center(
+      child: ExperienceCard(
+        companyName: companies[0],
+        icon: companies[1],
+        info: companies[2],
+        padding: companies[3],
+      ),
     );
   }
 }
