@@ -3,7 +3,7 @@ import 'package:personal_web_test/Widgets/ExperienceCard.dart';
 import 'package:personal_web_test/Helpers/ContentStrings.dart';
 import 'package:personal_web_test/Widgets/PageLayout.dart';
 import 'package:personal_web_test/Helpers/ResponsiveWidget.dart';
-import 'package:personal_web_test/Widgets/DesktopLayout.dart';
+import 'package:personal_web_test/Desktop/ExperienceUI.dart';
 
 class ExperienceRoute extends StatelessWidget {
   final String title = "Experience";
@@ -37,7 +37,7 @@ class ExperienceRoute extends StatelessWidget {
         header: title,
         widgetList: companies.map(createExperienceCards).toList(),
       ),
-      desktopScreen: DesktopLayout(
+      desktopScreen: ExperienceUI(
         header: title,
         widgetList: companies.map(createExperienceCards).toList(),
       ),

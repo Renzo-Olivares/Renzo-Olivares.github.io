@@ -12,6 +12,9 @@ class DesktopLayout extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0),
         child: Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Align(
               alignment: Alignment.center,
@@ -32,8 +35,8 @@ class DesktopLayout extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 SizedBox(
-                  height: 500.0,
-                  width: MediaQuery.of(context).size.width - 400,
+                  height: MediaQuery.of(context).size.height - 106,
+                  width: MediaQuery.of(context).size.width - 106,
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
