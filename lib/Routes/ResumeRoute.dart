@@ -13,17 +13,14 @@ class ResumeRoute extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<Widget> _widgetList = [
       Padding(
-        padding: ResponsiveWidget.isDesktop(context)
-            ? EdgeInsets.only(
-                top: 8.0, left: MediaQuery.of(context).size.width / 3)
-            : EdgeInsets.only(top: 8.0),
+        padding: EdgeInsets.only(top: 8.0),
         child: Card(
           child: Image.asset('images/resume.png'),
         ),
       ),
       Padding(
         padding: ResponsiveWidget.isDesktop(context)
-            ? EdgeInsets.all(100.0)
+            ? EdgeInsets.all(35.0)
             : EdgeInsets.only(top: 20.0, bottom: 10.0),
         child: CircleIconButton(
           altIcon: Icons.file_download,

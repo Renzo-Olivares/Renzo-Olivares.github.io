@@ -14,7 +14,7 @@ class DesktopLayout extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Align(
-              alignment: Alignment.centerLeft,
+              alignment: Alignment.center,
               child: Padding(
                 padding: const EdgeInsets.only(left: 5.0),
                 child: Text(
@@ -26,24 +26,21 @@ class DesktopLayout extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
-              padding: header == 'Experience'
-                  ? EdgeInsets.only(
-                      left: MediaQuery.of(context).size.width / 5, bottom: 10.0)
-                  : EdgeInsets.all(0.0),
-              child: SizedBox(
-                height: 500.0,
-                child: Row(
-                  children: <Widget>[
-                    Expanded(
-                      child: ListView(
-                        scrollDirection: Axis.horizontal,
-                        children: widgetList,
-                      ),
-                    ),
-                  ],
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                SizedBox(
+                  height: 500.0,
+                  width: MediaQuery.of(context).size.width - 400,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: widgetList,
+                  ),
                 ),
-              ),
+              ],
             ),
           ],
         ),

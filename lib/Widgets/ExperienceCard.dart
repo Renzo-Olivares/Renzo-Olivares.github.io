@@ -1,4 +1,5 @@
 import 'package:flutter_web/material.dart';
+import 'package:personal_web_test/Helpers/ResponsiveWidget.dart';
 
 class ExperienceCard extends StatelessWidget {
   final ImageProvider icon;
@@ -6,14 +7,20 @@ class ExperienceCard extends StatelessWidget {
   final String info;
   final bool padding;
 
-  ExperienceCard(
-      {Key key, this.icon, this.companyName, this.info, this.padding})
-      : super(key: key);
+  ExperienceCard({
+    Key key,
+    this.icon,
+    this.companyName,
+    this.info,
+    this.padding,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 10.0),
+      padding: ResponsiveWidget.isDesktop(context)
+          ? const EdgeInsets.only(right: 20.0)
+          : const EdgeInsets.only(top: 10.0),
       child: Card(
         elevation: 4.0,
         color: Theme.of(context).accentColor,
