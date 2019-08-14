@@ -19,7 +19,7 @@ class ExperienceCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: ResponsiveWidget.isDesktop(context)
-          ? const EdgeInsets.only(right: 20.0)
+          ? const EdgeInsets.symmetric(horizontal: 10.0)
           : const EdgeInsets.only(top: 10.0),
       child: Card(
         elevation: 4.0,
