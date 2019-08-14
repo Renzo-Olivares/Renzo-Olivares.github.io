@@ -21,25 +21,30 @@ class ExperienceCard extends StatelessWidget {
       padding: ResponsiveWidget.isDesktop(context)
           ? const EdgeInsets.symmetric(horizontal: 10.0)
           : const EdgeInsets.only(top: 10.0),
-      child: Card(
-        elevation: 4.0,
-        color: Theme.of(context).accentColor,
-        child: Row(
-          children: <Widget>[
-            Card(
-              elevation: 2.0,
-              child: Padding(
-                padding: padding
-                    ? const EdgeInsets.all(2.0)
-                    : const EdgeInsets.all(0.0),
-                child: ImageIcon(icon, size: 96.0),
+      child: SizedBox(
+        width: ResponsiveWidget.isDesktop(context) ? 250.0 : 500.0,
+        child: Card(
+          elevation: 4.0,
+          color: Theme.of(context).accentColor,
+          child: Row(
+            children: <Widget>[
+              Card(
+                elevation: 2.0,
+                child: Padding(
+                  padding: padding
+                      ? const EdgeInsets.all(2.0)
+                      : const EdgeInsets.all(0.0),
+                  child: ImageIcon(icon, size: 96.0),
+                ),
               ),
-            ),
-            Card(
-              elevation: 2.0,
-              child: Text(info),
-            ),
-          ],
+              Expanded(
+                child: Card(
+                  elevation: 2.0,
+                  child: Text(info),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -45,13 +45,11 @@ class ExperienceRoute extends StatelessWidget {
   }
 
   Widget createExperienceCards(List<dynamic> companies) {
-    return Center(
-      child: ExperienceCard(
-        companyName: companies[0],
-        icon: companies[1],
-        info: companies[2],
-        padding: companies[3],
-      ),
+    return ExperienceCard(
+      companyName: companies[0],
+      icon: companies[1],
+      info: companies[2],
+      padding: companies[3],
     );
   }
 }

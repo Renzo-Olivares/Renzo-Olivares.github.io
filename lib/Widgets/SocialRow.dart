@@ -24,9 +24,12 @@ class SocialRow extends StatelessWidget {
         'LinkedIn',
       ],
     ];
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: socialSites.map(createSocialButton).toList(),
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: socialSites.map(createSocialButton).toList(),
+      ),
     );
   }
 

@@ -33,7 +33,7 @@ class ProjectCardDesktop extends StatelessWidget {
               ),
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 5.0),
+                  padding: const EdgeInsets.only(left: 2.5),
                   child: Card(
                       elevation: 2.0,
                       child: Column(
