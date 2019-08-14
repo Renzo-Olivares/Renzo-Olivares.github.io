@@ -1,9 +1,10 @@
 import 'package:flutter_web/material.dart';
 import 'package:personal_web_test/Helpers/ContentStrings.dart';
 import 'package:personal_web_test/Widgets/ProjectCard.dart';
+import 'package:personal_web_test/Desktop/ProjectCardDesktop.dart';
+import 'package:personal_web_test/Desktop/ProjectsUI.dart';
 import 'package:personal_web_test/Widgets/PageLayout.dart';
 import 'package:personal_web_test/Helpers/ResponsiveWidget.dart';
-import 'package:personal_web_test/Widgets/DesktopLayout.dart';
 
 class ProjectsRoute extends StatelessWidget {
   final String title = "Projects";
@@ -22,7 +23,7 @@ class ProjectsRoute extends StatelessWidget {
         header: title,
         widgetList: projects.map(createProjectWidget).toList(),
       ),
-      desktopScreen: DesktopLayout(
+      desktopScreen: ProjectsUI(
         header: title,
         widgetList: projects.map(createProjectWidget).toList(),
       ),
@@ -30,10 +31,17 @@ class ProjectsRoute extends StatelessWidget {
   }
 
   Widget createProjectWidget(List<dynamic> project) {
-    return ProjectCard(
-      title: project[0],
-      image: project[1],
-      info: ContentStrings.placeholder,
+    return ResponsiveWidget(
+      mobileScreen: ProjectCard(
+        title: project[0],
+        image: project[1],
+        info: ContentStrings.placeholder,
+      ),
+      desktopScreen: ProjectCardDesktop(
+        title: project[0],
+        image: project[1],
+        info: ContentStrings.placeholder,
+      ),
     );
   }
 }
