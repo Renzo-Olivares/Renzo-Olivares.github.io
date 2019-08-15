@@ -28,6 +28,7 @@ class PageLayout extends StatelessWidget {
             ),
             Expanded(
               child: ListView(
+                physics: BouncingScrollPhysics(),
                 children: widgetList,
               ),
             )

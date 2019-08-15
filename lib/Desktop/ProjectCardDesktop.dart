@@ -1,4 +1,5 @@
 import 'package:flutter_web/material.dart';
+import 'package:personal_web_test/Helpers/ResponsiveWidget.dart';
 
 class ProjectCardDesktop extends StatelessWidget {
   final String title;
@@ -14,14 +15,15 @@ class ProjectCardDesktop extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10.0),
       child: SizedBox(
-        height: 210.0,
+        height: ResponsiveWidget.isMobile(context) ? 300.0 : 210.0,
         child: Card(
           color: Theme.of(context).accentColor,
           elevation: 4.0,
           child: Row(
             children: <Widget>[
               SizedBox(
-                width: 500.0,
+                height: ResponsiveWidget.isMobile(context) ? 300.0 : 210.0,
+                width: 400.0,
                 child: Card(
                   elevation: 2.0,
                   child: Padding(
@@ -42,8 +44,7 @@ class ProjectCardDesktop extends StatelessWidget {
                           Align(
                               alignment: Alignment.center,
                               child: Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 5.0, top: 5.0, bottom: 5.0),
+                                padding: const EdgeInsets.only(top: 5.0, bottom: 5.0),
                                 child: Text(
                                   title,
                                   style: TextStyle(
@@ -52,15 +53,24 @@ class ProjectCardDesktop extends StatelessWidget {
                                       fontSize: 17.0),
                                 ),
                               )),
-                          Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 10.0),
-                            child: Text(stack),
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 10.0),
+                              child: Text(stack, textAlign: TextAlign.justify),
+                            ),
                           ),
-                          Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 10.0, vertical: 7.0),
-                            child: Text(info),
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 10.0, vertical: 7.0),
+                              child: Text(
+                                info,
+                                textAlign: TextAlign.justify,
+                              ),
+                            ),
                           ),
                         ],
                       )),

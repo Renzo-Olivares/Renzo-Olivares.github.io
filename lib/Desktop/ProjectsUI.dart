@@ -28,6 +28,7 @@ class ProjectsUI extends StatelessWidget {
             width: MediaQuery.of(context).size.width - 476,
             height: MediaQuery.of(context).size.height - 106,
             child: ListView(
+              physics: BouncingScrollPhysics(),
               children: widgetList,
             ),
           )

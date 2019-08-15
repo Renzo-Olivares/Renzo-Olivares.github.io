@@ -40,17 +40,28 @@ class AboutRoute extends StatelessWidget {
                     fontSize: 25.0),
               ),
               Container(height: 25),
-              Text(
-                "About:",
-                style: TextStyle(
-                    color: Theme.of(context).accentColor,
-                    fontWeight: FontWeight.w300,
-                    fontSize: 20.0),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: ResponsiveWidget.isDesktop(context)
+                      ? const EdgeInsets.only(left: 380.0)
+                      : const EdgeInsets.only(left: 0.0),
+                  child: Text(
+                    "About:",
+                    style: TextStyle(
+                        color: Theme.of(context).accentColor,
+                        fontWeight: FontWeight.w300,
+                        fontSize: 20.0),
+                  ),
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 10.0),
-                child: Text(ContentStrings.aboutMe,
-                    style: TextStyle(fontWeight: FontWeight.w400)),
+                child: Text(
+                  ContentStrings.aboutMe,
+                  style: TextStyle(fontWeight: FontWeight.w400),
+                  textAlign: TextAlign.justify,
+                ),
               ),
               SizedBox(height: 50),
               SocialRow(),

@@ -28,6 +28,7 @@ class ResumeUI extends StatelessWidget {
             height: MediaQuery.of(context).size.height - 106,
             width: 600.0,
             child: ListView(
+              physics: BouncingScrollPhysics(),
               children: widgetList,
             ),
           ),

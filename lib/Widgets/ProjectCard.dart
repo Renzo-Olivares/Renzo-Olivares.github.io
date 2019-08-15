@@ -41,10 +41,10 @@ class ProjectCard extends StatelessWidget {
                     child: Column(
                       children: <Widget>[
                         Align(
-                            alignment: Alignment.center,
+                            alignment: Alignment.centerLeft,
                             child: Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 5.0, top: 5.0, bottom: 5.0),
+                              padding: const EdgeInsets.only(
+                                  left: 10.0, top: 5.0, bottom: 5.0),
                               child: Text(
                                 title,
                                 style: TextStyle(
@@ -53,14 +53,27 @@ class ProjectCard extends StatelessWidget {
                                     fontSize: 17.0),
                               ),
                             )),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 10.0),
-                          child: Text(stack),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 10.0),
+                            child: Text(
+                              stack,
+                              textAlign: TextAlign.justify,
+                            ),
+                          ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
-                          child: Text(info),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 10.0, vertical: 5.0),
+                            child: Text(
+                              info,
+                              textAlign: TextAlign.justify,
+                            ),
+                          ),
                         ),
                       ],
                     )),
