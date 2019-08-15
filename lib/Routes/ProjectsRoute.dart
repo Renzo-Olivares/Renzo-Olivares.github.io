@@ -13,15 +13,32 @@ class ProjectsRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<List<dynamic>> projects = [
-      ['Simple ToDo', 'images/simpleshow.png'],
-      ['Flutter Units', 'images/funits.png'],
-      ['Flutter Twitter', 'images/ftwitter.png'],
+      [
+        'Simple ToDo',
+        'images/simpleshow.png',
+        ContentStrings.stodoTechStack,
+        ContentStrings.stodoInfo,
+      ],
+      [
+        'Flutter Units',
+        'images/funits.png',
+        ContentStrings.flutterUnitsTechStack,
+        ContentStrings.flutterUnitsInfo,
+      ],
+      [
+        'Flutter Twitter',
+        'images/ftwitter.png',
+        ContentStrings.flutterTwitterTechStack,
+        ContentStrings.flutterTwitterInfo,
+      ],
     ];
 
     return ResponsiveWidget(
       mobileScreen: PageLayout(
         header: title,
-        widgetList: projects.map(createProjectWidget).toList(),
+        widgetList: MediaQuery.of(context).orientation == Orientation.landscape
+            ? projects.map(createProjectWidgetLand).toList()
+            : projects.map(createProjectWidget).toList(),
       ),
       desktopScreen: ProjectsUI(
         header: title,
@@ -35,13 +52,24 @@ class ProjectsRoute extends StatelessWidget {
       mobileScreen: ProjectCard(
         title: project[0],
         image: project[1],
-        info: ContentStrings.placeholder,
+        stack: project[2],
+        info: project[3],
       ),
       desktopScreen: ProjectCardDesktop(
         title: project[0],
         image: project[1],
-        info: ContentStrings.placeholder,
+        stack: project[2],
+        info: project[3],
       ),
+    );
+  }
+
+  Widget createProjectWidgetLand(List<dynamic> project) {
+    return ProjectCardDesktop(
+      title: project[0],
+      image: project[1],
+      stack: project[2],
+      info: project[3],
     );
   }
 }

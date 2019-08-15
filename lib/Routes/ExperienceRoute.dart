@@ -33,10 +33,15 @@ class ExperienceRoute extends StatelessWidget {
       ]
     ];
     return ResponsiveWidget(
-      mobileScreen: PageLayout(
-        header: title,
-        widgetList: companies.map(createExperienceCards).toList(),
-      ),
+      mobileScreen: MediaQuery.of(context).orientation == Orientation.landscape
+          ? ExperienceUI(
+              header: title,
+              widgetList: companies.map(createExperienceCards).toList(),
+            )
+          : PageLayout(
+              header: title,
+              widgetList: companies.map(createExperienceCards).toList(),
+            ),
       desktopScreen: ExperienceUI(
         header: title,
         widgetList: companies.map(createExperienceCards).toList(),

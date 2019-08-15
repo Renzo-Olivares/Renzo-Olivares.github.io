@@ -2,17 +2,21 @@ import 'package:flutter_web/material.dart';
 
 class ProjectCard extends StatelessWidget {
   final String title;
+  final String stack;
   final String info;
   final String image;
 
-  ProjectCard({Key key, this.info, this.image, this.title}) : super(key: key);
+  ProjectCard({Key key, this.stack, this.info, this.image, this.title})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10.0,),
+      padding: const EdgeInsets.symmetric(
+        vertical: 10.0,
+      ),
       child: SizedBox(
-        height: 200.0,
+        height: 315.0,
         child: Card(
           color: Theme.of(context).accentColor,
           elevation: 4.0,
@@ -37,9 +41,10 @@ class ProjectCard extends StatelessWidget {
                     child: Column(
                       children: <Widget>[
                         Align(
-                            alignment: Alignment.centerLeft,
+                            alignment: Alignment.center,
                             child: Padding(
-                              padding: const EdgeInsets.only(left: 5.0, top: 5.0),
+                              padding:
+                                  const EdgeInsets.only(left: 5.0, top: 5.0, bottom: 5.0),
                               child: Text(
                                 title,
                                 style: TextStyle(
@@ -48,7 +53,15 @@ class ProjectCard extends StatelessWidget {
                                     fontSize: 17.0),
                               ),
                             )),
-                        Text(info),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10.0),
+                          child: Text(stack),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+                          child: Text(info),
+                        ),
                       ],
                     )),
               ),

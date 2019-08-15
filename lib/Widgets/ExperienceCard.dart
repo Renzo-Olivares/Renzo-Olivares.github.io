@@ -22,7 +22,10 @@ class ExperienceCard extends StatelessWidget {
           ? const EdgeInsets.symmetric(horizontal: 10.0)
           : const EdgeInsets.only(top: 10.0),
       child: SizedBox(
-        width: ResponsiveWidget.isDesktop(context) ? 250.0 : 500.0,
+        width: ResponsiveWidget.isDesktop(context) ||
+                MediaQuery.of(context).orientation == Orientation.landscape
+            ? 250.0
+            : 500.0,
         child: Card(
           elevation: 4.0,
           color: Theme.of(context).accentColor,
