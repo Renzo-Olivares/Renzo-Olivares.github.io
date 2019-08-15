@@ -18,7 +18,7 @@ class ExperienceUI extends StatelessWidget {
                 : Alignment.center,
             child: Padding(
               padding: ResponsiveWidget.isMobile(context)
-                  ? const EdgeInsets.only(left: 10.0, top: 20.0)
+                  ? const EdgeInsets.only(left: 25.0, top: 20.0)
                   : const EdgeInsets.only(left: 5.0, top: 20.0),
               child: Text(
                 header,
