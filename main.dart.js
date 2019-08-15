@@ -18367,7 +18367,7 @@ M.jx.prototype={
 gcO:function(a){var u=this.e
 if(u!=null)return u
 switch(this.c){case C.b9:case C.em:return C.bi
-case C.en:return C.mb}return C.aK},
+case C.en:return C.ma}return C.aK},
 gfv:function(a){var u=this.f
 if(u!=null)return u
 switch(this.c){case C.b9:case C.em:return C.oX
@@ -18647,7 +18647,7 @@ else s=u.b?"inactive and muted":"inactive"}else s=r
 u=Y.c("ticker",u,!0,r,s,!1,r,r,C.b,!1,!0,!1,C.c,r,M.dA)
 a.a.push(u)}}
 T.wQ.prototype={
-F:function(a){var u=null,t=K.a0(a),s=F.aP(a,!1).e.b,r=S.dG(new F.bp(C.x,C.x,Z.TU(a,0),C.x),u,u,u,u,u,C.N),q=C.m8.K(0,new V.V(0,s,0,0)),p=t.y1
+F:function(a){var u=null,t=K.a0(a),s=F.aP(a,!1).e.b,r=S.dG(new F.bp(C.x,C.x,Z.TU(a,0),C.x),u,u,u,u,u,C.N),q=C.m7.K(0,new V.V(0,s,0,0)),p=t.y1
 p=L.jL(F.Nv(this.x,a,!1,!1,!1,!0),u,C.ap,!0,p.x,u)
 return M.ca(u,G.OJ(p,u,C.a_,this.c,C.lZ,q),u,u,r,u,s+161,this.e,u,u,u)}}
 Z.Ij.prototype={
@@ -37209,19 +37209,19 @@ gu:function(a){return C.j.gu(this.a)}}
 Q.dI.prototype={
 h:function(a){return this.b}}
 Q.nX.prototype={
-F:function(a){var u=null,t=F.aP(a,!1).a.a<800?C.e9:C.w,s=F.aP(a,!1).a.a<800?C.m4:C.cW,r=L.b7(this.c,u,u,A.bm(u,u,K.a0(a).r,u,u,u,u,u,u,u,25,u,C.at,u,u,!0,u,u,u,u,u,u)),q=F.aP(a,!1).a.a<800?new V.V(0,30,0,0):new V.V(0,100,0,0),p=[N.a2]
+F:function(a){var u=null,t=F.aP(a,!1).a.a<800?C.e9:C.w,s=F.aP(a,!1).a.a<800?C.mb:C.cW,r=L.b7(this.c,u,u,A.bm(u,u,K.a0(a).r,u,u,u,u,u,u,u,25,u,C.at,u,u,!0,u,u,u,u,u,u)),q=F.aP(a,!1).a.a<800?new V.V(0,30,0,0):new V.V(0,100,0,0),p=[N.a2]
 return M.f4(u,T.dK(H.b([new T.bQ(t,u,u,new T.ai(s,r,u),u),T.dK(H.b([new T.ai(q,T.pI(this.d,C.Q,C.dr,C.aC),u)],p),C.Q,C.T)],p),C.Q,C.T),u)}}
 X.oe.prototype={
 F:function(a){var u,t,s=null,r=H.b(["About","Projects","Experience","Resume"],[P.i]),q=C.E.i(0,700)
 q=X.iR(C.E.i(0,500),s,s,q,s)
 u=N.a2
 t=[u]
-return S.Nq(s,!1,M.f4(s,new U.nK(4,M.f4(E.MR(H.b([new T.ai(C.m7,new T.cx(C.w,s,s,L.b7("Renzo Olivares",s,s,A.bm(s,s,s,s,s,s,s,s,s,s,18,s,C.v,s,s,!0,s,s,s,s,s,s)),s),s),new R.qc(s),new R.qc(s),new T.bw(450,s,new E.qi(new H.an(r,this.gCr(),[H.x(r,0),u]).aI(0),C.n,s),s)],t),s),new E.qj(H.b([new D.hG(s),new S.he(s),new F.fP(s),new U.iB(s)],t),s),s),s),s),s,C.ik,q,"Renzo Olivares (Developer)")},
+return S.Nq(s,!1,M.f4(s,new U.nK(4,M.f4(E.MR(H.b([new T.ai(C.m6,new T.cx(C.w,s,s,L.b7("Renzo Olivares",s,s,A.bm(s,s,s,s,s,s,s,s,s,s,18,s,C.v,s,s,!0,s,s,s,s,s,s)),s),s),new R.qc(s),new R.qc(s),new T.bw(450,s,new E.qi(new H.an(r,this.gCr(),[H.x(r,0),u]).aI(0),C.n,s),s)],t),s),new E.qj(H.b([new D.hG(s),new S.he(s),new F.fP(s),new U.iB(s)],t),s),s),s),s),s,C.ik,q,"Renzo Olivares (Developer)")},
 Cs:function(a){var u=null
 return new E.FK(L.b7(a,u,u,A.bm(u,u,u,u,u,u,u,u,u,u,13,u,C.at,u,u,!0,u,u,u,u,u,u)),u)}}
 M.Cp.prototype={
 F:function(a){var u=this,t=null,s=K.a0(a).r,r=[N.a2]
-return new T.ai(C.cU,new T.bw(t,210,V.dh(T.pI(H.b([new T.bw(500,t,V.dh(new T.ai(C.as,U.Nc(u.f),t),t,2),t),new T.eH(1,C.az,new T.ai(C.mg,V.dh(T.dK(H.b([new T.bQ(C.w,t,t,new T.ai(C.eR,L.b7(u.c,t,t,A.bm(t,t,K.a0(a).r,t,t,t,t,t,t,t,17,t,C.bj,t,t,!0,t,t,t,t,t,t)),t),t),new T.ai(C.cV,L.b7(u.d,t,t,t),t),new T.ai(C.m6,L.b7(u.e,t,t,t),t)],r),C.Q,C.T),t,2),t),t)],r),C.Q,C.T,C.aC),s,4),t),t)}}
+return new T.ai(C.cU,new T.bw(t,210,V.dh(T.pI(H.b([new T.bw(500,t,V.dh(new T.ai(C.as,U.Nc(u.f),t),t,2),t),new T.eH(1,C.az,new T.ai(C.mg,V.dh(T.dK(H.b([new T.bQ(C.w,t,t,new T.ai(C.eR,L.b7(u.c,t,t,A.bm(t,t,K.a0(a).r,t,t,t,t,t,t,t,17,t,C.bj,t,t,!0,t,t,t,t,t,t)),t),t),new T.ai(C.cV,L.b7(u.d,t,t,t),t),new T.ai(C.m5,L.b7(u.e,t,t,t),t)],r),C.Q,C.T),t,2),t),t)],r),C.Q,C.T,C.aC),s,4),t),t)}}
 G.Cq.prototype={
 F:function(a){var u=null
 return M.f4(u,T.dK(H.b([new T.bQ(C.w,u,u,new T.ai(C.cW,L.b7(this.c,u,u,A.bm(u,u,K.a0(a).r,u,u,u,u,u,u,u,25,u,C.at,u,u,!0,u,u,u,u,u,u)),u),u),new T.bw(F.aP(a,!1).a.a-476,F.aP(a,!1).a.b-106,B.oE(this.d,u),u)],[N.a2]),C.Q,C.T),u)}}
@@ -37284,7 +37284,7 @@ $0:function(){$.O_=this.a},
 $S:1}
 D.hG.prototype={
 F:function(a){var u=null
-return M.f4(u,new T.ai(C.m9,E.Vb(T.dK(H.b([new T.ai(C.cT,new T.cx(C.w,u,u,new G.nD(80,u),u),u),new T.ai(C.eP,L.b7("Renzo Olivares",u,u,A.bm(u,u,K.a0(a).b,u,u,u,u,u,u,u,25,u,C.v,u,u,!0,u,u,u,u,u,u)),u),L.b7("Bay Area, California",u,u,A.bm(u,u,K.a0(a).b,u,u,u,u,u,u,u,25,u,C.at,u,u,!0,u,u,u,u,u,u)),M.ca(u,u,u,u,u,u,25,u,u,u,u),L.b7("About:",u,u,A.bm(u,u,K.a0(a).r,u,u,u,u,u,u,u,20,u,C.at,u,u,!0,u,u,u,u,u,u)),new T.ai(C.cT,L.b7("Hello, I'm Renzo Olivares and I am currently attending the University \nof California, Riverside, under the Bournes College of Engineering \nfor Computer Science. I have a passion for developing on mobile\nplatforms, as well as an interest in machine learning and artifical intelligence.",u,u,A.bm(u,u,u,u,u,u,u,u,u,u,u,u,C.v,u,u,!0,u,u,u,u,u,u)),u),new T.bw(u,50,u,u),new T.q8(u)],[N.a2]),C.Q,C.T),u,C.a2,new L.jr(u),C.p),u),u)}}
+return M.f4(u,new T.ai(C.m8,E.Vb(T.dK(H.b([new T.ai(C.cT,new T.cx(C.w,u,u,new G.nD(80,u),u),u),new T.ai(C.eP,L.b7("Renzo Olivares",u,u,A.bm(u,u,K.a0(a).b,u,u,u,u,u,u,u,25,u,C.v,u,u,!0,u,u,u,u,u,u)),u),L.b7("Bay Area, California",u,u,A.bm(u,u,K.a0(a).b,u,u,u,u,u,u,u,25,u,C.at,u,u,!0,u,u,u,u,u,u)),M.ca(u,u,u,u,u,u,25,u,u,u,u),L.b7("About:",u,u,A.bm(u,u,K.a0(a).r,u,u,u,u,u,u,u,20,u,C.at,u,u,!0,u,u,u,u,u,u)),new T.ai(C.cT,L.b7("Hello, I'm Renzo Olivares and I am currently attending the University \nof California, Riverside, under the Bournes College of Engineering \nfor Computer Science. I have a passion for developing on mobile\nplatforms, as well as an interest in machine learning and artifical intelligence.",u,u,A.bm(u,u,u,u,u,u,u,u,u,u,u,u,C.v,u,u,!0,u,u,u,u,u,u)),u),new T.bw(u,50,u,u),new T.q8(u)],[N.a2]),C.Q,C.T),u,C.a2,new L.jr(u),C.p),u),u)}}
 F.fP.prototype={
 F:function(a){var u=null,t="Experience",s=F.aP(a,!1),r=this.gIj(),q=N.a2,p=H.x(C.bm,0)
 s=s.glA(s)===C.bz?new Q.nX(t,new H.an(C.bm,r,[p,q]).aI(0),u):new Y.kP(t,new H.an(C.bm,r,[p,q]).aI(0),u)
@@ -37331,10 +37331,10 @@ s=this.f?C.mc:C.aK
 return new T.ai(q,new T.bw(u,r,V.dh(T.pI(H.b([V.dh(new T.ai(s,S.Pv(this.c,96),r),r,2),new T.eH(1,C.az,V.dh(L.b7(this.e,r,r,r),r,2),r)],[N.a2]),C.Q,C.T,C.aC),t,4),r),r)}}
 Y.kP.prototype={
 F:function(a){var u=null
-return M.f4(u,new T.ai(C.ma,T.dK(H.b([new T.bQ(C.e9,u,u,new T.ai(C.me,L.b7(this.c,u,u,A.bm(u,u,K.a0(a).r,u,u,u,u,u,u,u,25,u,C.at,u,u,!0,u,u,u,u,u,u)),u),u),new T.eH(1,C.az,B.oE(this.d,u),u)],[N.a2]),C.Q,C.T),u),u)}}
+return M.f4(u,new T.ai(C.m9,T.dK(H.b([new T.bQ(C.e9,u,u,new T.ai(C.me,L.b7(this.c,u,u,A.bm(u,u,K.a0(a).r,u,u,u,u,u,u,u,25,u,C.at,u,u,!0,u,u,u,u,u,u)),u),u),new T.eH(1,C.az,B.oE(this.d,u),u)],[N.a2]),C.Q,C.T),u),u)}}
 S.Co.prototype={
 F:function(a){var u=this,t=null,s=K.a0(a).r,r=[N.a2]
-return new T.ai(C.cU,new T.bw(t,315,V.dh(T.dK(H.b([new T.bw(900,140,V.dh(new T.ai(C.as,U.Nc(u.f),t),t,2),t),new T.eH(1,C.az,V.dh(T.dK(H.b([new T.bQ(C.w,t,t,new T.ai(C.eR,L.b7(u.c,t,t,A.bm(t,t,K.a0(a).r,t,t,t,t,t,t,t,17,t,C.bj,t,t,!0,t,t,t,t,t,t)),t),t),new T.ai(C.cV,L.b7(u.d,t,t,t),t),new T.ai(C.m5,L.b7(u.e,t,t,t),t)],r),C.Q,C.T),t,2),t)],r),C.Q,C.T),s,4),t),t)}}
+return new T.ai(C.cU,new T.bw(t,315,V.dh(T.dK(H.b([new T.bw(900,140,V.dh(new T.ai(C.as,U.Nc(u.f),t),t,2),t),new T.eH(1,C.az,V.dh(T.dK(H.b([new T.bQ(C.w,t,t,new T.ai(C.eR,L.b7(u.c,t,t,A.bm(t,t,K.a0(a).r,t,t,t,t,t,t,t,17,t,C.bj,t,t,!0,t,t,t,t,t,t)),t),t),new T.ai(C.cV,L.b7(u.d,t,t,t),t),new T.ai(C.m4,L.b7(u.e,t,t,t),t)],r),C.Q,C.T),t,2),t)],r),C.Q,C.T),s,4),t),t)}}
 T.q8.prototype={
 F:function(a){var u=null,t=H.b([[new L.df("images/github-logo.png",u,u),"https://github.com/Renzo-Olivares","Github"],[new L.df("images/xda-logo.png",u,u),"https://forum.xda-developers.com/member.php?u=3449508","XDA-Developers"],[new L.df("images/linkedin-logo.png",u,u),"https://www.linkedin.com/in/510renzoolivares/","LinkedIn"]],[[P.r,,]])
 return new T.ai(C.cU,T.pI(new H.an(t,this.gIq(),[H.x(t,0),N.a2]).aI(0),C.Q,C.dr,C.aC),u)},
@@ -39350,15 +39350,15 @@ C.cU=new V.V(0,10,0,10)
 C.m3=new V.V(0,16,0,0)
 C.eP=new V.V(0,25,0,0)
 C.cV=new V.V(10,0,10,0)
-C.m4=new V.V(10,20,0,0)
-C.m5=new V.V(10,5,10,5)
-C.m6=new V.V(10,7,10,7)
-C.m7=new V.V(15,0,0,0)
+C.m4=new V.V(10,5,10,5)
+C.m5=new V.V(10,7,10,7)
+C.m6=new V.V(15,0,0,0)
 C.bi=new V.V(16,0,16,0)
-C.m8=new V.V(16,16,16,8)
-C.m9=new V.V(20,0,20,0)
-C.ma=new V.V(20,20,20,0)
-C.mb=new V.V(24,0,24,0)
+C.m7=new V.V(16,16,16,8)
+C.m8=new V.V(20,0,20,0)
+C.m9=new V.V(20,20,20,0)
+C.ma=new V.V(24,0,24,0)
+C.mb=new V.V(25,20,0,0)
 C.mc=new V.V(2,2,2,2)
 C.md=new V.V(30,0,30,0)
 C.eQ=new V.V(4,4,4,4)
