@@ -21,7 +21,7 @@ class ResponsiveWidget extends StatelessWidget {
   }
 
   static bool isTablet(BuildContext context) {
-    return MediaQuery.of(context).size.width > 800 &&
+    return MediaQuery.of(context).size.width >= 760 &&
         MediaQuery.of(context).size.width < 1200;
   }
 

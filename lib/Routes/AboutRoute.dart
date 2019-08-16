@@ -1,5 +1,6 @@
 import 'package:flutter_web/material.dart';
 import 'package:personal_web_test/Helpers/ContentStrings.dart';
+import 'package:personal_web_test/Helpers/ResponsiveWidget.dart';
 import 'package:personal_web_test/Widgets/CustomCircleAvatar.dart';
 import 'package:personal_web_test/Widgets/SocialRow.dart';
 
@@ -39,12 +40,20 @@ class AboutRoute extends StatelessWidget {
                     fontSize: 25.0),
               ),
               Container(height: 25),
-              Text(
-                "About",
-                style: TextStyle(
-                    color: Theme.of(context).accentColor,
-                    fontWeight: FontWeight.w300,
-                    fontSize: 20.0),
+              Align(
+                alignment: ResponsiveWidget.isDesktop(context) ||
+                        MediaQuery.of(context).orientation ==
+                            Orientation.landscape ||
+                        ResponsiveWidget.isTablet(context)
+                    ? Alignment.center
+                    : Alignment.centerLeft,
+                child: Text(
+                  "About",
+                  style: TextStyle(
+                      color: Theme.of(context).accentColor,
+                      fontWeight: FontWeight.w300,
+                      fontSize: 20.0),
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 10.0),
