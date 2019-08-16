@@ -32,38 +32,48 @@ class AboutRoute extends StatelessWidget {
                       fontSize: 25.0),
                 ),
               ),
-              Text(
-                "Bay Area, California",
-                style: TextStyle(
-                    color: Theme.of(context).primaryColor,
-                    fontWeight: FontWeight.w300,
-                    fontSize: 25.0),
-              ),
-              Container(height: 25),
-              Align(
-                alignment: ResponsiveWidget.isDesktop(context) ||
-                        MediaQuery.of(context).orientation ==
-                            Orientation.landscape ||
-                        ResponsiveWidget.isTablet(context)
-                    ? Alignment.center
-                    : Alignment.centerLeft,
+              Padding(
+                padding: const EdgeInsets.only(bottom: 25.0),
                 child: Text(
-                  "About",
+                  "Bay Area, California",
                   style: TextStyle(
-                      color: Theme.of(context).accentColor,
+                      color: Theme.of(context).primaryColor,
                       fontWeight: FontWeight.w300,
-                      fontSize: 20.0),
+                      fontSize: 25.0),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 10.0),
-                child: Text(
-                  ContentStrings.aboutMe,
-                  style: TextStyle(fontWeight: FontWeight.w400),
-                  textAlign: TextAlign.justify,
+                padding: const EdgeInsets.only(bottom: 50.0),
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.8,
+                  child: Column(
+                    children: <Widget>[
+                      Align(
+                        alignment: ResponsiveWidget.isDesktop(context)
+                            ? Alignment.center
+                            : Alignment.centerLeft,
+                        child: Text(
+                          "About",
+                          style: TextStyle(
+                              color: Theme.of(context).accentColor,
+                              fontWeight: FontWeight.w300,
+                              fontSize: 20.0),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 10.0),
+                        child: Text(
+                          ResponsiveWidget.isDesktop(context)
+                              ? ContentStrings.aboutMeWeb
+                              : ContentStrings.aboutMe,
+                          style: TextStyle(fontWeight: FontWeight.w400),
+                          textAlign: TextAlign.justify,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-              SizedBox(height: 50),
               SocialRow(),
             ],
           ),

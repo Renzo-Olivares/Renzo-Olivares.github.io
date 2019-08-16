@@ -1,9 +1,14 @@
 class ContentStrings {
-  static const String aboutMe =
+  static const String aboutMeWeb =
       "Hello, I'm Renzo Olivares and I am currently attending the University "
       "\nof California, Riverside, under the Bourne's College of Engineering "
       "\nfor Computer Science. I have a passion for developing on mobile"
       "\nplatforms, as well as an interest in machine learning and artifical intelligence.";
+
+  static const String aboutMe =
+  '''
+  Hello, I'm Renzo Olivares and I am currently attending the University of California, Riverside under the Bourne's College of Engineering for Computer Science. I have a passion for developing on mobile platforms, as well as an interest in machine learning and artifical intelligence.
+  ''';
 
   static const String stodoTechStack =
       "Tech Stack: Java, XML, Android Studio, Android WorkManager, Android ROOM Library";
