@@ -35,9 +35,13 @@ class ExperienceUI extends StatelessWidget {
                 padding: ResponsiveWidget.isMobile(context)
                     ? EdgeInsets.only(top: 30.0)
                     : EdgeInsets.only(top: 100.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: widgetList,
+                child: SingleChildScrollView(
+                  physics: BouncingScrollPhysics(),
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: widgetList,
+                  ),
                 ),
               ),
             ],

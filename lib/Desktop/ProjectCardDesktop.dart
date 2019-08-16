@@ -42,9 +42,16 @@ class ProjectCardDesktop extends StatelessWidget {
                       child: Column(
                         children: <Widget>[
                           Align(
-                              alignment: Alignment.center,
+                              alignment: ResponsiveWidget.isMobile(context)
+                                  ? Alignment.centerLeft
+                                  : Alignment.center,
                               child: Padding(
-                                padding: const EdgeInsets.only(top: 5.0, bottom: 5.0),
+                                padding: EdgeInsets.only(
+                                    left: ResponsiveWidget.isMobile(context)
+                                        ? 10.0
+                                        : 0.0,
+                                    top: 5.0,
+                                    bottom: 5.0),
                                 child: Text(
                                   title,
                                   style: TextStyle(

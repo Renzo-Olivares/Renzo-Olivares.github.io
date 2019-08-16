@@ -13,15 +13,24 @@ class ContentStrings {
       "to retain data across the activity and fragment lifecycle.";
 
   static const String flutterUnitsTechStack =
-      "Tech Stack: Dart, Flutter, RxDart, Json, Android Studio     ";
+      "Tech Stack: Dart, Flutter, RxDart, Json, Android Studio";
   static const String flutterUnitsInfo =
-      "Built unit conversion app leveraging RxDart to implement BLoC Architecture"
-      "\nPattern.";
+      "Built unit conversion app leveraging RxDart to implement BLoC Architecture Pattern.";
 
   static const String flutterTwitterTechStack =
-      "Tech Stack: Dart, Flutter, Android Studio                                 ";
+      "Tech Stack: Dart, Flutter, Android Studio";
   static const String flutterTwitterInfo =
-      "Build of mockup twiter UX in flutter.                                     ";
+      "Build of mockup twiter UX in flutter.";
+
+  static const String ccfInfo =
+      "Instructed various computer science curriculum to teach "
+      "computer science fundamentals, electrical engineering basics, and basic app building.";
+  static const String kfInfo =
+      "Completed data entry, cleanup, and create pipelines through the use of the python libraries "
+      "numpy and pandas.";
+  static const String szInfo =
+      "Managed office logistics and operations, and made quality improvements to "
+      "the internal wiki.";
 
   static const String placeholder = "nothing to see here...";
 }

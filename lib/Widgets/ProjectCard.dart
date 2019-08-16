@@ -1,4 +1,5 @@
 import 'package:flutter_web/material.dart';
+import 'package:personal_web_test/Helpers/ResponsiveWidget.dart';
 
 class ProjectCard extends StatelessWidget {
   final String title;
@@ -41,10 +42,16 @@ class ProjectCard extends StatelessWidget {
                     child: Column(
                       children: <Widget>[
                         Align(
-                            alignment: Alignment.centerLeft,
+                            alignment: ResponsiveWidget.isDesktop(context)
+                                ? Alignment.center
+                                : Alignment.centerLeft,
                             child: Padding(
-                              padding: const EdgeInsets.only(
-                                  left: 10.0, top: 5.0, bottom: 5.0),
+                              padding: EdgeInsets.only(
+                                  left: ResponsiveWidget.isDesktop(context)
+                                      ? 0.0
+                                      : 10.0,
+                                  top: 5.0,
+                                  bottom: 5.0),
                               child: Text(
                                 title,
                                 style: TextStyle(

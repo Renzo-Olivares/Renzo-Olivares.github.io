@@ -26,24 +26,59 @@ class ExperienceCard extends StatelessWidget {
                 MediaQuery.of(context).orientation == Orientation.landscape
             ? 250.0
             : 500.0,
+        height: 130.0,
         child: Card(
           elevation: 4.0,
           color: Theme.of(context).accentColor,
           child: Row(
             children: <Widget>[
-              Card(
-                elevation: 2.0,
-                child: Padding(
-                  padding: padding
-                      ? const EdgeInsets.all(2.0)
-                      : const EdgeInsets.all(0.0),
-                  child: ImageIcon(icon, size: 96.0),
+              SizedBox(
+                height: 130.0,
+                child: Card(
+                  color: companyName == 'Code for Fun'
+                      ? Colors.black
+                      : Colors.white,
+                  elevation: 2.0,
+                  child: Padding(
+                    padding: padding
+                        ? const EdgeInsets.all(2.0)
+                        : const EdgeInsets.all(0.0),
+                    child: ImageIcon(icon, size: 96.0),
+                  ),
                 ),
               ),
               Expanded(
                 child: Card(
                   elevation: 2.0,
-                  child: Text(info),
+                  child: Column(
+                    children: <Widget>[
+                      Align(
+                        alignment: ResponsiveWidget.isMobile(context)
+                            ? Alignment.centerLeft
+                            : Alignment.center,
+                        child: Padding(
+                          padding: ResponsiveWidget.isMobile(context)
+                              ? const EdgeInsets.only(left: 5.0)
+                              : const EdgeInsets.all(0.0),
+                          child: Text(
+                            companyName,
+                            style: TextStyle(
+                                color: Theme.of(context).accentColor,
+                                fontWeight: FontWeight.w300,
+                                fontSize: 15.0),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: Text(
+                          info,
+                          textAlign: TextAlign.left,
+                          style: TextStyle(fontSize: 10.0),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],

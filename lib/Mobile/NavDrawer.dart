@@ -93,6 +93,7 @@ class _NavDrawerState extends State<NavDrawer> {
               child: Container(
                 color: Colors.blue[500],
                 child: ListView(
+                  physics: BouncingScrollPhysics(),
                   children: drawerSections.map(createDrawerSections).toList(),
                 ),
               ),

@@ -16,19 +16,19 @@ class ExperienceRoute extends StatelessWidget {
       [
         "Code for Fun",
         AssetImage('images/codeforfun-logo.png'),
-        ContentStrings.placeholder,
+        ContentStrings.ccfInfo,
         false,
       ],
       [
         "KIPP Foundation",
         AssetImage('images/kipp-logo.png'),
-        ContentStrings.placeholder,
+        ContentStrings.kfInfo,
         true,
       ],
       [
         "Schoolzilla",
         AssetImage('images/schoolzilla-logo.png'),
-        ContentStrings.placeholder,
+        ContentStrings.szInfo,
         true,
       ]
     ];
