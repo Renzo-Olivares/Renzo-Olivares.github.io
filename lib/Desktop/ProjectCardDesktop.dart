@@ -60,7 +60,7 @@ class ProjectCardDesktop extends StatelessWidget {
                                   title,
                                   style: TextStyle(
                                       color: Theme.of(context).accentColor,
-                                      fontWeight: FontWeight.w100,
+                                      fontWeight: FontWeight.w300,
                                       fontSize: 17.0),
                                 ),
                               )),

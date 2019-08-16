@@ -1,7 +1,7 @@
 class ContentStrings {
   static const String aboutMe =
       "Hello, I'm Renzo Olivares and I am currently attending the University "
-      "\nof California, Riverside, under the Bournes College of Engineering "
+      "\nof California, Riverside, under the Bourne's College of Engineering "
       "\nfor Computer Science. I have a passion for developing on mobile"
       "\nplatforms, as well as an interest in machine learning and artifical intelligence.";
 
@@ -26,7 +26,7 @@ class ContentStrings {
       "Instructed various computer science curriculum to teach "
       "computer science fundamentals, electrical engineering basics, and basic app building.";
   static const String kfInfo =
-      "Completed data entry, cleanup, and create pipelines through the use of the python libraries "
+      "Completed data entry, cleanup, and created a pipeline through the use of the python libraries "
       "numpy and pandas.";
   static const String szInfo =
       "Managed office logistics and operations, and made quality improvements to "
