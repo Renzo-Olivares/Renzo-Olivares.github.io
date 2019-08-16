@@ -16,7 +16,7 @@ class _NavDrawerState extends State<NavDrawer> {
 
   @override
   Widget build(BuildContext context) {
-    List<List<dynamic>> drawerSections = [
+    final List<List<dynamic>> drawerSections = [
       [
         "About",
         Icons.person,
@@ -44,62 +44,68 @@ class _NavDrawerState extends State<NavDrawer> {
     ];
 
     return Drawer(
-      child: Column(
-        children: <Widget>[
-          SizedBox(
-            height: MediaQuery.of(context).orientation == Orientation.landscape
-                ? 190.0
-                : 220.0,
-            child: DrawerHeader(
-              margin: EdgeInsets.only(bottom: 0.0),
-              decoration: BoxDecoration(
-                color: Theme.of(context).primaryColor,
-              ),
-              child: ListView(
-                physics: ScrollPhysics(parent: NeverScrollableScrollPhysics()),
-                children: <Widget>[
-                  Center(
-                    child: Padding(
-                        padding: const EdgeInsets.only(top: 25.0),
-                        child: CustomCircleAvatar(
-                          size: 40.0,
+      child: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
+        child: SizedBox(
+          height: MediaQuery.of(context).size.height,
+          child: Column(
+            children: <Widget>[
+              SizedBox(
+                height: MediaQuery.of(context).orientation == Orientation.landscape
+                    ? 190.0
+                    : 220.0,
+                child: DrawerHeader(
+                  margin: EdgeInsets.only(bottom: 0.0),
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).primaryColor,
+                  ),
+                  child: ListView(
+                    physics: ScrollPhysics(parent: NeverScrollableScrollPhysics()),
+                    children: <Widget>[
+                      Center(
+                        child: Padding(
+                            padding: const EdgeInsets.only(top: 25.0),
+                            child: CustomCircleAvatar(
+                              size: 40.0,
+                            )),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 16.0),
+                        child: Center(
+                            child: Text(
+                          'Renzo Olivares',
+                          style: TextStyle(
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.w300,
+                              color: Colors.white),
                         )),
+                      ),
+                      Center(
+                          child: Text(
+                        'Computer Science Student',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w200, color: Colors.white),
+                      )),
+                    ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 16.0),
-                    child: Center(
-                        child: Text(
-                      'Renzo Olivares',
-                      style: TextStyle(
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.w300,
-                          color: Colors.white),
-                    )),
-                  ),
-                  Center(
-                      child: Text(
-                    'Computer Science Student',
-                    style: TextStyle(
-                        fontWeight: FontWeight.w200, color: Colors.white),
-                  )),
-                ],
-              ),
-            ),
-          ),
-          Flexible(
-            child: MediaQuery.removePadding(
-              context: context,
-              removeTop: true,
-              child: Container(
-                color: Colors.blue[500],
-                child: ListView(
-                  physics: BouncingScrollPhysics(),
-                  children: drawerSections.map(createDrawerSections).toList(),
                 ),
               ),
-            ),
+              Flexible(
+                child: MediaQuery.removePadding(
+                  context: context,
+                  removeTop: true,
+                  child: Container(
+                    color: Colors.blue[500],
+                    child: ListView(
+                      physics: BouncingScrollPhysics(),
+                      children: drawerSections.map(createDrawerSections).toList(),
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
