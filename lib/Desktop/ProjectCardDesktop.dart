@@ -6,8 +6,9 @@ class ProjectCardDesktop extends StatelessWidget {
   final String stack;
   final String info;
   final String image;
+  final VoidCallback tapFunction;
 
-  ProjectCardDesktop({Key key, this.info, this.image, this.stack, this.title})
+  ProjectCardDesktop({Key key, this.info, this.image, this.stack, this.title, this.tapFunction})
       : super(key: key);
 
   @override
@@ -28,8 +29,11 @@ class ProjectCardDesktop extends StatelessWidget {
                   elevation: 2.0,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Image.asset(
-                      image,
+                    child: MaterialButton(
+                      onPressed: tapFunction,
+                      child: Image.asset(
+                        image,
+                      ),
                     ),
                   ),
                 ),

@@ -5,6 +5,7 @@ import 'package:personal_web_test/Desktop/ProjectCardDesktop.dart';
 import 'package:personal_web_test/Desktop/ProjectsUI.dart';
 import 'package:personal_web_test/Widgets/PageLayout.dart';
 import 'package:personal_web_test/Helpers/ResponsiveWidget.dart';
+import 'package:personal_web_test/Helpers/UrlLauncher.dart';
 
 class ProjectsRoute extends StatelessWidget {
   final String title = "Projects";
@@ -18,18 +19,21 @@ class ProjectsRoute extends StatelessWidget {
         'images/simpleshow.png',
         ContentStrings.stodoTechStack,
         ContentStrings.stodoInfo,
+        'https://github.com/Renzo-Olivares/SimpleToDo',
       ],
       [
         'Flutter Units',
         'images/funits.png',
         ContentStrings.flutterUnitsTechStack,
         ContentStrings.flutterUnitsInfo,
+        'https://github.com/Renzo-Olivares/Units_Flutter',
       ],
       [
         'Flutter Twitter',
         'images/ftwitter.png',
         ContentStrings.flutterTwitterTechStack,
         ContentStrings.flutterTwitterInfo,
+        'https://github.com/Renzo-Olivares/Twitter_App',
       ],
     ];
 
@@ -54,12 +58,14 @@ class ProjectsRoute extends StatelessWidget {
         image: project[1],
         stack: project[2],
         info: project[3],
+        tapFunction: () => UrlLauncher.launchURL(project[4], project[0]),
       ),
       desktopScreen: ProjectCardDesktop(
         title: project[0],
         image: project[1],
         stack: project[2],
         info: project[3],
+        tapFunction: () => UrlLauncher.launchURL(project[4], project[0]),
       ),
     );
   }
@@ -70,6 +76,7 @@ class ProjectsRoute extends StatelessWidget {
       image: project[1],
       stack: project[2],
       info: project[3],
+      tapFunction: () => UrlLauncher.launchURL(project[4], project[0]),
     );
   }
 }
