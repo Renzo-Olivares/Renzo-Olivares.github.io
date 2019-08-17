@@ -39,7 +39,7 @@ class AboutRoute extends StatelessWidget {
                   style: TextStyle(
                       color: Theme.of(context).primaryColor,
                       fontWeight: FontWeight.w300,
-                      fontSize: 25.0),
+                      fontSize: 22.0),
                 ),
               ),
               Padding(
