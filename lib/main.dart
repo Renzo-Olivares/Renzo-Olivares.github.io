@@ -16,7 +16,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: ResponsiveWidget(
           mobileScreen: HomeMobile(brand: title),
-          tabletScreen: HomeTablet(brand: title),
           desktopScreen: HomeDesktop(brand: title)),
     );
   }

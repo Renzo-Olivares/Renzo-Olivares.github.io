@@ -8,7 +8,13 @@ class ProjectCardDesktop extends StatelessWidget {
   final String image;
   final VoidCallback tapFunction;
 
-  ProjectCardDesktop({Key key, this.info, this.image, this.stack, this.title, this.tapFunction})
+  ProjectCardDesktop(
+      {Key key,
+      this.info,
+      this.image,
+      this.stack,
+      this.title,
+      this.tapFunction})
       : super(key: key);
 
   @override
