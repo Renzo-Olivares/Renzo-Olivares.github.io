@@ -37414,7 +37414,7 @@ $C:"$0",
 $R:0,
 $S:0}
 U.iB.prototype={
-F:function(a){var u=null,t=H.b([new T.ad(new V.Q(0,8,0,0),V.dk(U.Ne("images/resume.png"),u,u),u),new T.ad(new V.Q(0,20,0,10),N.P3(C.mu,u,28,new U.DP()),u)],[N.a3])
+F:function(a){var u=null,t=H.b([new T.ad(new V.Q(0,8,0,0),V.dk(U.Ne("images/resume.jpg"),u,u),u),new T.ad(new V.Q(0,20,0,10),N.P3(C.mu,u,28,new U.DP()),u)],[N.a3])
 return R.pE(new S.DQ("Resume",t,u),new Y.kO("Resume",t,u))}}
 U.DP.prototype={
 $0:function(){C.a8.jd(window,"https://github.com/Renzo-Olivares/Renzo-Olivares.github.io/raw/site_source/web/assets/documents/Renzo-Olivares_Tech_Resume.pdf","Resume")
