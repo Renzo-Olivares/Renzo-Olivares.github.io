@@ -15,7 +15,7 @@ class ResumeRoute extends StatelessWidget {
       Padding(
         padding: EdgeInsets.only(top: 8.0),
         child: Card(
-          child: Image.asset('images/resume.png'),
+          child: Image.asset('images/resume.jpg'),
         ),
       ),
       Padding(
