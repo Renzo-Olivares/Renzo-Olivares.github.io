@@ -1,4 +1,4 @@
-import 'package:flutter_web/material.dart';
+import 'package:flutter/material.dart';
 import 'package:personal_web_test/Widgets/ExperienceCard.dart';
 import 'package:personal_web_test/Helpers/ContentStrings.dart';
 import 'package:personal_web_test/Widgets/PageLayout.dart';
@@ -15,19 +15,19 @@ class ExperienceRoute extends StatelessWidget {
     const List<List<dynamic>> companies = [
       [
         "Code for Fun",
-        AssetImage('images/codeforfun-logo.png'),
+        AssetImage('codeforfun-logo.png'),
         ContentStrings.ccfInfo,
         false,
       ],
       [
         "KIPP Foundation",
-        AssetImage('images/kipp-logo.png'),
+        AssetImage('kipp-logo.png'),
         ContentStrings.kfInfo,
         true,
       ],
       [
         "Schoolzilla",
-        AssetImage('images/schoolzilla-logo.png'),
+        AssetImage('schoolzilla-logo.png'),
         ContentStrings.szInfo,
         true,
       ]

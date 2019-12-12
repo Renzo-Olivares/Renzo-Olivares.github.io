@@ -1,4 +1,4 @@
-import 'package:flutter_web/material.dart';
+import 'package:flutter/material.dart';
 import 'package:personal_web_test/Widgets/PageLayout.dart';
 import 'package:personal_web_test/Widgets/CircleIconButton.dart';
 import 'package:personal_web_test/Helpers/UrlLauncher.dart';
@@ -15,7 +15,7 @@ class ResumeRoute extends StatelessWidget {
       Padding(
         padding: EdgeInsets.only(top: 8.0),
         child: Card(
-          child: Image.asset('images/resume.jpg'),
+          child: Image.asset('resume.jpg'),
         ),
       ),
       Padding(

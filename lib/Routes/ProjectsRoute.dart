@@ -1,4 +1,4 @@
-import 'package:flutter_web/material.dart';
+import 'package:flutter/material.dart';
 import 'package:personal_web_test/Helpers/ContentStrings.dart';
 import 'package:personal_web_test/Widgets/ProjectCard.dart';
 import 'package:personal_web_test/Desktop/ProjectCardDesktop.dart';
@@ -16,21 +16,21 @@ class ProjectsRoute extends StatelessWidget {
     List<List<dynamic>> projects = [
       [
         'Simple ToDo',
-        'images/simpleshow.png',
+        'simpleshow.png',
         ContentStrings.stodoTechStack,
         ContentStrings.stodoInfo,
         'https://github.com/Renzo-Olivares/SimpleToDo',
       ],
       [
         'Flutter Units',
-        'images/funits.png',
+        'funits.png',
         ContentStrings.flutterUnitsTechStack,
         ContentStrings.flutterUnitsInfo,
         'https://github.com/Renzo-Olivares/Units_Flutter',
       ],
       [
         'Flutter Twitter',
-        'images/ftwitter.png',
+        'ftwitter.png',
         ContentStrings.flutterTwitterTechStack,
         ContentStrings.flutterTwitterInfo,
         'https://github.com/Renzo-Olivares/Twitter_App',

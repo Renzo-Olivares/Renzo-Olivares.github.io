@@ -1,44 +1,35 @@
 name: personal_web_test
 description: An app built using Flutter for web
 
+version: 1.0.0+1
+
 environment:
-  # You must be using Flutter >=1.5.0 or Dart >=2.3.0
-  sdk: '>=2.3.0 <3.0.0'
-  
-flutter_web:
-  uses-material-design: true
-  assets:
-    - AssetManifest.json
-    - FontManifest.json
-    - fonts/MaterialIcons-Regular.ttf
-    - images/github-logo.png
-    - images/xda-logo.png
-    - images/linkedin-logo.png
-    - images/schoolzilla-logo.png
-    - images/codeforfun-logo.png
-    - images/kipp-logo.png
-    - images/simpleshow.png
-    - images/ftwitter.png
-    - images/funits.png
-    - images/resume.jpg
-    - images/profile_picture.png
-    - documents/Renzo-Olivares_Tech_Resume.pdf
+  sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
-  flutter_web: any
-  flutter_web_ui: any
+  flutter:
+    sdk: flutter
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^0.1.2
 
 dev_dependencies:
-  build_runner: ^1.5.0
-  build_web_compilers: ^2.1.0
-  pedantic: ^1.7.0
-
-dependency_overrides:
-  flutter_web:
-    git:
-      url: https://github.com/flutter/flutter_web
-      path: packages/flutter_web
-  flutter_web_ui:
-    git:
-      url: https://github.com/flutter/flutter_web
-      path: packages/flutter_web_ui
+  flutter_test:
+    sdk: flutter
+  
+flutter:
+  uses-material-design: true
+  assets:
+    - github-logo.png
+    - xda-logo.png
+    - linkedin-logo.png
+    - schoolzilla-logo.png
+    - codeforfun-logo.png
+    - kipp-logo.png
+    - simpleshow.png
+    - ftwitter.png
+    - funits.png
+    - resume.jpg
+    - profile_picture.png
+    - Renzo-Olivares_Tech_Resume.pdf

@@ -1,4 +1,4 @@
-import 'package:flutter_web/material.dart';
+import 'package:flutter/material.dart';
 
 class CustomCircleAvatar extends StatelessWidget {
   final double size;
@@ -20,7 +20,7 @@ class CustomCircleAvatar extends StatelessWidget {
       ),
       child: CircleAvatar(
         radius: size,
-        backgroundImage: AssetImage('images/profile_picture.png'),
+        backgroundImage: AssetImage('profile_picture.png'),
       ),
     );
   }

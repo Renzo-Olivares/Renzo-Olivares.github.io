@@ -1,9 +1,9 @@
-import 'package:flutter_web/material.dart';
+import 'package:flutter/material.dart';
 
 class RootDrawer {
   static DrawerControllerState of(BuildContext context) {
     final DrawerControllerState drawerControllerState =
-        context.rootAncestorStateOfType(TypeMatcher<DrawerControllerState>());
+        context.dependOnInheritedWidgetOfExactType(aspect: DrawerControllerState());
     return drawerControllerState;
   }
 }

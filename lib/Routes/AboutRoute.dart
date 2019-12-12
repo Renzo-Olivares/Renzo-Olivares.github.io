@@ -1,4 +1,4 @@
-import 'package:flutter_web/material.dart';
+import 'package:flutter/material.dart';
 import 'package:personal_web_test/Helpers/ContentStrings.dart';
 import 'package:personal_web_test/Helpers/ResponsiveWidget.dart';
 import 'package:personal_web_test/Widgets/CustomCircleAvatar.dart';

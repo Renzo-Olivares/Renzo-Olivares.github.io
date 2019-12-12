@@ -1,4 +1,4 @@
-import 'package:flutter_web/material.dart';
+import 'package:flutter/material.dart';
 import 'package:personal_web_test/Mobile/NavDrawer.dart';
 import 'package:personal_web_test/Routes/AboutRoute.dart';
 import 'package:personal_web_test/Routes/ProjectsRoute.dart';
