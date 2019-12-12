@@ -1,16 +1,1 @@
-{
-    "assets": [
-      "images/github-logo.png",
-      "images/xda-logo.png",
-      "images/linkedin-logo.png",
-      "images/schoolzilla-logo.png",
-      "images/kipp-logo.png",
-      "images/codeforfun-logo.png",
-      "images/simpleshow.png",
-      "images/ftwitter.png",
-      "images/funits.png",
-      "images/resume.jpg",
-      "images/profile_picture.png",
-      "documents/Renzo-Olivares_Tech_Resume.pdf"
-    ]
-  }
+{"packages/cupertino_icons/assets/CupertinoIcons.ttf":["packages/cupertino_icons/assets/CupertinoIcons.ttf"],"Renzo-Olivares_Tech_Resume.pdf":["assets/Renzo-Olivares_Tech_Resume.pdf"],"codeforfun-logo.png":["assets/codeforfun-logo.png"],"ftwitter.png":["assets/ftwitter.png"],"funits.png":["assets/funits.png"],"github-logo.png":["assets/github-logo.png"],"kipp-logo.png":["assets/kipp-logo.png"],"linkedin-logo.png":["assets/linkedin-logo.png"],"profile_picture.png":["assets/profile_picture.png"],"resume.jpg":["assets/resume.jpg"],"schoolzilla-logo.png":["assets/schoolzilla-logo.png"],"simpleshow.png":["assets/simpleshow.png"],"xda-logo.png":["assets/xda-logo.png"]}
