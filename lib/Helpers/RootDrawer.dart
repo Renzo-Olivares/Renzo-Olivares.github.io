@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class RootDrawer {
   static DrawerControllerState of(BuildContext context) {
     final DrawerControllerState drawerControllerState =
-        context.dependOnInheritedWidgetOfExactType(aspect: DrawerControllerState());
+        context.findRootAncestorStateOfType<DrawerControllerState>();
     return drawerControllerState;
   }
 }

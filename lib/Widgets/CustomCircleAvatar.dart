@@ -18,9 +18,12 @@ class CustomCircleAvatar extends StatelessWidget {
           color: Colors.blue[500],
         ),
       ),
-      child: CircleAvatar(
-        radius: size,
-        backgroundImage: AssetImage('assets/images/profile_picture.png'),
+      child: ClipOval(
+        child: Image.asset('assets/images/profile_picture.png',
+        fit: BoxFit.cover,
+        height: 180.0,
+        width: 180.0,
+        ),
       ),
     );
   }
