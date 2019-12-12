@@ -7,6 +7,7 @@ class CustomCircleAvatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const double offset = 80;
     return Container(
       decoration: BoxDecoration(
         boxShadow: [
@@ -20,7 +21,7 @@ class CustomCircleAvatar extends StatelessWidget {
       ),
       child: CircleAvatar(
         radius: size,
-        backgroundImage: AssetImage('assets/images/profile_picture.png'),
+        child: ClipOval(child: Image.asset('assets/images/profile_picture.png', fit: BoxFit.cover,width: size + offset, height: size + offset,)),
       ),
     );
   }
