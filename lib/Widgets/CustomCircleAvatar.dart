@@ -20,7 +20,7 @@ class CustomCircleAvatar extends StatelessWidget {
       ),
       child: CircleAvatar(
         radius: size,
-        backgroundImage: AssetImage('profile_picture.png'),
+        backgroundImage: AssetImage('assets/images/profile_picture.png'),
       ),
     );
   }

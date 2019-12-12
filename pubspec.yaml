@@ -4,7 +4,7 @@ description: An app built using Flutter for web
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.2.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -21,15 +21,15 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - github-logo.png
-    - xda-logo.png
-    - linkedin-logo.png
-    - schoolzilla-logo.png
-    - codeforfun-logo.png
-    - kipp-logo.png
-    - simpleshow.png
-    - ftwitter.png
-    - funits.png
-    - resume.jpg
-    - profile_picture.png
-    - Renzo-Olivares_Tech_Resume.pdf
+    - assets/images/github-logo.png
+    - assets/images/xda-logo.png
+    - assets/images/linkedin-logo.png
+    - assets/images/schoolzilla-logo.png
+    - assets/images/codeforfun-logo.png
+    - assets/images/kipp-logo.png
+    - assets/images/simpleshow.png
+    - assets/images/ftwitter.png
+    - assets/images/funits.png
+    - assets/images/resume.jpg
+    - assets/images/profile_picture.png
+    - assets/documents/Renzo-Olivares_Tech_Resume.pdf

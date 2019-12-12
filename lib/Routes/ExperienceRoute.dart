@@ -15,19 +15,19 @@ class ExperienceRoute extends StatelessWidget {
     const List<List<dynamic>> companies = [
       [
         "Code for Fun",
-        AssetImage('codeforfun-logo.png'),
+        AssetImage('assets/images/codeforfun-logo.png'),
         ContentStrings.ccfInfo,
         false,
       ],
       [
         "KIPP Foundation",
-        AssetImage('kipp-logo.png'),
+        AssetImage('assets/images/kipp-logo.png'),
         ContentStrings.kfInfo,
         true,
       ],
       [
         "Schoolzilla",
-        AssetImage('schoolzilla-logo.png'),
+        AssetImage('assets/images/schoolzilla-logo.png'),
         ContentStrings.szInfo,
         true,
       ]

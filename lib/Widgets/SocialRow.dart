@@ -9,17 +9,17 @@ class SocialRow extends StatelessWidget {
   Widget build(BuildContext context) {
     List<List<dynamic>> socialSites = [
       [
-        AssetImage('github-logo.png'),
+        AssetImage('assets/images/github-logo.png'),
         'https://github.com/Renzo-Olivares',
         'Github',
       ],
       [
-        AssetImage('xda-logo.png'),
+        AssetImage('assets/images/xda-logo.png'),
         'https://forum.xda-developers.com/member.php?u=3449508',
         'XDA-Developers',
       ],
       [
-        AssetImage('linkedin-logo.png'),
+        AssetImage('assets/images/linkedin-logo.png'),
         'https://www.linkedin.com/in/510renzoolivares/',
         'LinkedIn',
       ],

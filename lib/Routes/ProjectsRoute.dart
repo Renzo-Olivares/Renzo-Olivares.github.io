@@ -16,21 +16,21 @@ class ProjectsRoute extends StatelessWidget {
     List<List<dynamic>> projects = [
       [
         'Simple ToDo',
-        'simpleshow.png',
+        'assets/images/simpleshow.png',
         ContentStrings.stodoTechStack,
         ContentStrings.stodoInfo,
         'https://github.com/Renzo-Olivares/SimpleToDo',
       ],
       [
         'Flutter Units',
-        'funits.png',
+        'assets/images/funits.png',
         ContentStrings.flutterUnitsTechStack,
         ContentStrings.flutterUnitsInfo,
         'https://github.com/Renzo-Olivares/Units_Flutter',
       ],
       [
         'Flutter Twitter',
-        'ftwitter.png',
+        'assets/images/ftwitter.png',
         ContentStrings.flutterTwitterTechStack,
         ContentStrings.flutterTwitterInfo,
         'https://github.com/Renzo-Olivares/Twitter_App',
