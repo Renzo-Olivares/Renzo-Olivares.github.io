@@ -25,7 +25,7 @@ class ResumeRoute extends StatelessWidget {
           size: 28.0,
           tapFunction: () => {
             UrlLauncher.launchURL(
-                'https://github.com/Renzo-Olivares/Renzo-Olivares.github.io/raw/site_source/web/assets/documents/Renzo-Olivares_Tech_Resume.pdf',
+                'https://github.com/Renzo-Olivares/Renzo-Olivares.github.io/raw/site_source/assets/documents/Renzo-Olivares_Tech_Resume.pdf',
                 'Resume')
           },
         ),
