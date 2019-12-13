@@ -21,6 +21,7 @@ class CustomCircleAvatar extends StatelessWidget {
       ),
       child: CircleAvatar(
         radius: size,
+        backgroundColor: Colors.transparent,
         child: ClipOval(child: Image.asset('assets/images/profile_picture.png', fit: BoxFit.cover,width: size + offset, height: size + offset,)),
       ),
     );
