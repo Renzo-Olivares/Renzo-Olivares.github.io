@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:getflutter/getflutter.dart';
-import 'package:fluttericon/entypo_icons.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class AboutPage extends StatefulWidget {
-  AboutPage({Key key}) : super(key: key);
+  const AboutPage({Key key}) : super(key: key);
 
   @override
   _AboutPageState createState() => _AboutPageState();
@@ -19,15 +17,15 @@ class _AboutPageState extends State<AboutPage>
     super.initState();
 
     _controller = AnimationController(
-        duration: Duration(milliseconds: 3500), vsync: this);
-
-    _controller.addStatusListener((status) {
-      if (status == AnimationStatus.completed) {
-        //_controller.reverse();
-      } else if (status == AnimationStatus.dismissed) {
-        _controller.forward();
-      }
-    });
+      duration: Duration(milliseconds: 3500),
+      vsync: this,
+    )..addStatusListener((status) {
+        if (status == AnimationStatus.completed) {
+          //_controller.reverse();
+        } else if (status == AnimationStatus.dismissed) {
+          _controller.forward();
+        }
+      });
 
     _controller.forward();
   }
@@ -83,16 +81,18 @@ class StaggeredTextAnimator extends StatelessWidget {
         children: [
           Opacity(
             opacity: greetingOpacityAnimation.value,
-            child: Text("Hi, my name is",
-                style: GoogleFonts.manrope(
-                  color: Colors.cyan[600],
-                  fontSize: 16,
-                )),
+            child: Text(
+              "Hi, my name is",
+              style: TextStyle(
+                color: Colors.cyan[600],
+                fontSize: 16,
+              ),
+            ),
           ),
           Opacity(
             opacity: nameOpacityAnimation.value,
             child: Text("Renzo Olivares.",
-                style: GoogleFonts.manrope(
+                style: TextStyle(
                     color: Colors.indigo[100],
                     fontSize: 66,
                     fontWeight: FontWeight.w600)),
@@ -100,36 +100,49 @@ class StaggeredTextAnimator extends StatelessWidget {
           Opacity(
             opacity: descOpacityAnimation.value,
             child: Text("I build things with code.",
-                style: GoogleFonts.manrope(
+                style: TextStyle(
                     color: Colors.indigo[100],
                     fontSize: 56,
                     fontWeight: FontWeight.w500)),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 40),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                GFButton(
-                  onPressed: () {},
-                  text: "LinkedIn",
-                  icon: Icon(Entypo.linkedin),
-                  //shape: GFButtonShape.square,
-                  type: GFButtonType.transparent,
-                  color: Colors.cyan[600],
-                ),
-                GFButton(
-                  onPressed: () {},
-                  text: "Github",
-                  icon: Icon(Entypo.github),
-                  //shape: GFButtonShape.square,
-                  type: GFButtonType.transparent,
-                  color: Colors.cyan[600],
-                ),
-              ],
-            ),
+          SizedBox(height: 20),
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              _SocialButton(MdiIcons.linkedin, 'LinkedIn', () {}),
+              SizedBox(
+                width: 8,
+              ),
+              _SocialButton(MdiIcons.github, 'Github', () {}),
+            ],
           ),
         ],
+      ),
+    );
+  }
+}
+
+class _SocialButton extends StatelessWidget {
+  const _SocialButton(this._icon, this._label, this._onTap);
+  final IconData _icon;
+  final String _label;
+  final VoidCallback _onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return OutlinedButton.icon(
+      icon: Icon(_icon),
+      label: Text(
+        _label,
+        style: TextStyle(fontSize: 14),
+      ),
+      onPressed: _onTap,
+      style: OutlinedButton.styleFrom(
+        primary: Colors.cyan[600],
+        elevation: 4,
+        side: BorderSide(
+          color: Colors.cyan[600],
+        ),
       ),
     );
   }

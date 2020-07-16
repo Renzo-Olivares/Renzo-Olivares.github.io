@@ -1,54 +1,108 @@
+import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:renzo_portfolio/Helpers/ResponsiveWidget.dart';
-import 'package:renzo_portfolio/Pages/AboutPage.dart';
 
-class Navigator extends StatefulWidget {
-  Navigator({Key key}) : super(key: key);
+import 'Helpers/ResponsiveWidget.dart';
+import 'Pages/AboutPage.dart';
+import 'Pages/ProjectsPage.dart';
+import 'Pages/ResumePage.dart';
+import 'Pages/WorkPage.dart';
+
+class AdaptiveNav extends StatefulWidget {
+  AdaptiveNav({Key key}) : super(key: key);
 
   @override
-  _NavigatorState createState() => _NavigatorState();
+  _AdaptiveNavState createState() => _AdaptiveNavState();
 }
 
-class _NavigatorState extends State<Navigator>{
+class _AdaptiveNavState extends State<AdaptiveNav> {
   int _selectedIndex = 0;
-  Brightness brightnessValue;
-  bool isDark;
+  Brightness _brightnessValue;
+  bool _isDark;
+
+  final _pages = <Widget>[
+    const AboutPage(),
+    const ProjectsPage(),
+    const WorkPage(),
+    const ResumePage(),
+  ];
 
   @override
   Widget build(BuildContext context) {
-    brightnessValue = MediaQuery.of(context).platformBrightness;
-    isDark = brightnessValue == Brightness.dark;
+    _brightnessValue = MediaQuery.of(context).platformBrightness;
+    _isDark = _brightnessValue == Brightness.dark;
 
     return ResponsiveWidget(
-      desktopScreen: _buildDesktopNav(),
-      mobileScreen: _buildMobileNav(),
+      desktopScreen: _BuildDesktopNav(
+        selectedIndex: _selectedIndex,
+        dark: _isDark,
+        extended: true,
+        routes: _pages,
+        onItemTapped: _onItemTapped,
+      ),
+      tabletScreen: _BuildDesktopNav(
+        selectedIndex: _selectedIndex,
+        extended: false,
+        dark: _isDark,
+        routes: _pages,
+        onItemTapped: _onItemTapped,
+      ),
+      mobileScreen: _BuildMobileNav(
+        selectedIndex: _selectedIndex,
+        isDark: _isDark,
+        routes: _pages,
+        onItemTapped: _onItemTapped,
+      ),
     );
   }
 
-  Widget _buildDesktopNav() {
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+}
+
+class _BuildDesktopNav extends StatefulWidget {
+  const _BuildDesktopNav(
+      {Key key,
+      this.selectedIndex,
+      this.dark,
+      this.extended,
+      this.routes,
+      this.onItemTapped})
+      : super(key: key);
+  final selectedIndex;
+  final bool dark;
+  final bool extended;
+  final List routes;
+  final void Function(int) onItemTapped;
+
+  @override
+  _BuildDesktopNavState createState() => _BuildDesktopNavState();
+}
+
+class _BuildDesktopNavState extends State<_BuildDesktopNav> {
+  bool _isExtended;
+
+  @override
+  void initState() {
+    super.initState();
+    _isExtended = widget.extended;
+  }
+
+  @override
+  void didUpdateWidget(_BuildDesktopNav oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.extended != widget.extended) _isExtended = widget.extended;
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       body: Row(
         children: [
           NavigationRail(
-            selectedIndex: _selectedIndex,
-            elevation: 4.0,
-            selectedIconTheme: IconThemeData(color: Colors.cyan[600]),
-            unselectedIconTheme: isDark
-                ? IconThemeData(color: Colors.grey[400])
-                : IconThemeData(color: Colors.black),
-            labelType: NavigationRailLabelType.all,
-            selectedLabelTextStyle:
-                GoogleFonts.manrope(color: Colors.cyan[600]),
-            unselectedLabelTextStyle: isDark
-                ? GoogleFonts.manrope(
-                    color: Colors.grey[400],
-                  )
-                : GoogleFonts.manrope(
-                  color: Colors.black,
-                ),
-            onDestinationSelected: _onItemTapped,
             destinations: [
               NavigationRailDestination(
                 icon: Icon(Icons.person_outline),
@@ -71,19 +125,55 @@ class _NavigatorState extends State<Navigator>{
                 label: Text('Resume'),
               ),
             ],
+            extended: _isExtended,
+            labelType: NavigationRailLabelType.none,
+            leading: Row(
+              children: [
+                SizedBox(width: 25),
+                InkWell(
+                  child: Icon(Icons.menu),
+                  onTap: () {
+                    setState(() {
+                      _isExtended = !_isExtended;
+                    });
+                  },
+                ),
+              ],
+            ),
+            selectedIconTheme: IconThemeData(color: Colors.cyan[600]),
+            selectedIndex: widget.selectedIndex,
+            selectedLabelTextStyle: TextStyle(color: Colors.cyan[600]),
+            unselectedIconTheme: IconThemeData(
+                color: widget.dark ? Colors.grey[400] : Colors.black),
+            unselectedLabelTextStyle:
+                TextStyle(color: widget.dark ? Colors.grey[400] : Colors.black),
+            onDestinationSelected: widget.onItemTapped,
           ),
           VerticalDivider(thickness: 1, width: 1),
           Expanded(
-            child: _screenBuilder(_selectedIndex),
+            child: _ScreenTransitionBuilder(
+              currentScreen: widget.routes.elementAt(widget.selectedIndex),
+            ),
           ),
         ],
       ),
     );
   }
+}
 
-  Widget _buildMobileNav() {
+class _BuildMobileNav extends StatelessWidget {
+  const _BuildMobileNav(
+      {this.selectedIndex, this.isDark, this.routes, this.onItemTapped});
+  final selectedIndex;
+  final bool isDark;
+  final List routes;
+  final void Function(int) onItemTapped;
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
-      body: _screenBuilder(_selectedIndex),
+      body: _ScreenTransitionBuilder(
+          currentScreen: routes.elementAt(selectedIndex)),
       bottomNavigationBar: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -93,20 +183,7 @@ class _NavigatorState extends State<Navigator>{
               canvasColor: isDark ? Colors.grey[800] : Colors.white,
             ),
             child: BottomNavigationBar(
-              currentIndex: _selectedIndex,
-              elevation: 4.0,
-              selectedItemColor: Colors.cyan[600],
-              unselectedItemColor: isDark ? Colors.grey : Colors.black,
-              showUnselectedLabels: true,
-              selectedLabelStyle: GoogleFonts.manrope(color: Colors.cyan[600]),
-              unselectedLabelStyle: isDark
-                ? GoogleFonts.manrope(
-                    color: Colors.grey,
-                  )
-                : GoogleFonts.manrope(
-                  color: Colors.black,
-                ),
-              onTap: _onItemTapped,
+              currentIndex: selectedIndex,
               items: const <BottomNavigationBarItem>[
                 BottomNavigationBarItem(
                   icon: Icon(Icons.person_outline),
@@ -129,71 +206,38 @@ class _NavigatorState extends State<Navigator>{
                   title: Text('Resume'),
                 ),
               ],
+              onTap: onItemTapped,
+              selectedItemColor: Colors.cyan[600],
+              selectedLabelStyle: TextStyle(color: Colors.cyan[600]),
+              showUnselectedLabels: true,
+              unselectedItemColor: isDark ? Colors.grey : Colors.black,
+              unselectedLabelStyle: TextStyle(
+                color: isDark ? Colors.grey : Colors.black,
+              ),
             ),
           ),
         ],
       ),
     );
   }
+}
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
+class _ScreenTransitionBuilder extends StatelessWidget {
+  const _ScreenTransitionBuilder({this.currentScreen});
+  final Widget currentScreen;
 
-  Widget _buildAboutArea() {
-    return AboutPage();
-  }
-
-  Widget _buildProjectArea() {
-    return Center(
-      child: Text('Projects'),
+  @override
+  Widget build(BuildContext context) {
+    return PageTransitionSwitcher(
+      child: currentScreen,
+      transitionBuilder: (Widget child, Animation<double> animation,
+          Animation<double> secondaryAnimation) {
+        return FadeThroughTransition(
+          child: child,
+          animation: animation,
+          secondaryAnimation: secondaryAnimation,
+        );
+      },
     );
-  }
-
-  Widget _buildWorkArea() {
-    return Center(
-      child: Text('Work Experience'),
-    );
-  }
-
-  Widget _buildResumeArea() {
-    return Center(
-      child: Text('Resume'),
-    );
-  }
-
-  Widget _screenBuilder(int index) {
-    switch (index) {
-      case 0:
-        {
-          return _buildAboutArea();
-        }
-        break;
-
-      case 1:
-        {
-          return _buildProjectArea();
-        }
-        break;
-
-      case 2:
-        {
-          return _buildWorkArea();
-        }
-        break;
-
-      case 3:
-        {
-          return _buildResumeArea();
-        }
-        break;
-
-      default:
-        {
-          return _buildAboutArea();
-        }
-    }
   }
 }
