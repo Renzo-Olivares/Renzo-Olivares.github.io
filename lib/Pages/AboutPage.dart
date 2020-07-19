@@ -75,48 +75,51 @@ class StaggeredTextAnimator extends StatelessWidget {
 
   Widget _buildLayout(BuildContext context, Widget child) {
     return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Opacity(
-            opacity: greetingOpacityAnimation.value,
-            child: Text(
-              "Hi, my name is",
-              style: TextStyle(
-                color: Colors.cyan[600],
-                fontSize: 16,
+      child: Padding(
+        padding: const EdgeInsets.all(32.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Opacity(
+              opacity: greetingOpacityAnimation.value,
+              child: Text(
+                "Hi, my name is",
+                style: TextStyle(
+                  color: Colors.cyan[600],
+                  fontSize: 16,
+                ),
               ),
             ),
-          ),
-          Opacity(
-            opacity: nameOpacityAnimation.value,
-            child: Text("Renzo Olivares.",
-                style: TextStyle(
-                    color: Colors.indigo[100],
-                    fontSize: 66,
-                    fontWeight: FontWeight.w600)),
-          ),
-          Opacity(
-            opacity: descOpacityAnimation.value,
-            child: Text("I build things with code.",
-                style: TextStyle(
-                    color: Colors.indigo[100],
-                    fontSize: 56,
-                    fontWeight: FontWeight.w500)),
-          ),
-          SizedBox(height: 20),
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              _SocialButton(MdiIcons.linkedin, 'LinkedIn', () {}),
-              SizedBox(
-                width: 8,
-              ),
-              _SocialButton(MdiIcons.github, 'Github', () {}),
-            ],
-          ),
-        ],
+            Opacity(
+              opacity: nameOpacityAnimation.value,
+              child: Text("Renzo Olivares.",
+                  style: TextStyle(
+                      color: Colors.indigo[100],
+                      fontSize: 66,
+                      fontWeight: FontWeight.w600)),
+            ),
+            Opacity(
+              opacity: descOpacityAnimation.value,
+              child: Text("I build things with code.",
+                  style: TextStyle(
+                      color: Colors.indigo[100],
+                      fontSize: 56,
+                      fontWeight: FontWeight.w500)),
+            ),
+            SizedBox(height: 20),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                _SocialButton(MdiIcons.linkedin, 'LinkedIn', () {}),
+                SizedBox(
+                  width: 8,
+                ),
+                _SocialButton(MdiIcons.github, 'Github', () {}),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
