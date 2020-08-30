@@ -24,17 +24,13 @@ class ResponsiveWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        var windowType = getWindowType(context);
-        if (windowType > AdaptiveWindowType.m) {
-          return desktopScreen;
-        } else if (windowType == AdaptiveWindowType.m) {
-          return tabletScreen ?? desktopScreen;
-        } else {
-          return mobileScreen;
-        }
-      },
-    );
+    var windowType = getWindowType(context);
+    if (windowType > AdaptiveWindowType.m) {
+      return desktopScreen;
+    } else if (windowType == AdaptiveWindowType.m) {
+      return tabletScreen ?? desktopScreen;
+    } else {
+      return mobileScreen;
+    }
   }
 }
