@@ -1,18 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:renzo_portfolio/colors.dart';
+import 'package:provider/provider.dart';
 
+import 'Model/portfolio_state.dart';
 import 'Navigator.dart';
+import 'colors.dart';
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Renzo\'s Portfolio',
-      darkTheme: _buildDarkTheme(context),
-      debugShowCheckedModeBanner: false,
-      theme: _buildLightTheme(context),
-      home: AdaptiveNav(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<PortfolioState>.value(value: PortfolioState())
+      ],
+      child: MaterialApp(
+        title: 'Renzo\'s Portfolio',
+        darkTheme: _buildDarkTheme(context),
+        debugShowCheckedModeBanner: false,
+        theme: _buildLightTheme(context),
+        home: AdaptiveNav(),
+      ),
     );
   }
 }

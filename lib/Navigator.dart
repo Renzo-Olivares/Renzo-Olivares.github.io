@@ -1,8 +1,10 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:provider/provider.dart';
 
 import 'Helpers/ResponsiveWidget.dart';
+import 'Model/portfolio_state.dart';
 import 'Pages/AboutPage.dart';
 import 'Pages/ProjectsPage.dart';
 import 'Pages/ResumePage.dart';
@@ -43,6 +45,14 @@ class _AdaptiveNavState extends State<AdaptiveNav> {
   }
 
   void _onItemTapped(int index) {
+    var showWelcomeScreen =
+        Provider.of<PortfolioState>(context, listen: false).showWelcomeScreen;
+
+    if (showWelcomeScreen) {
+      Provider.of<PortfolioState>(context, listen: false).showWelcomeScreen =
+          false;
+    }
+
     setState(
       () {
         _selectedIndex = index;
