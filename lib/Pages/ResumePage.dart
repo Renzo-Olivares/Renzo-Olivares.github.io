@@ -5,6 +5,10 @@ class ResumePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text('Resume')));
+    return Scaffold(
+      body: Center(
+        child: Text('Resume'),
+      ),
+    );
   }
 }

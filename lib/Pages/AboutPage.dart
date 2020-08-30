@@ -19,13 +19,15 @@ class _AboutPageState extends State<AboutPage>
     _controller = AnimationController(
       duration: Duration(milliseconds: 3500),
       vsync: this,
-    )..addStatusListener((status) {
-        if (status == AnimationStatus.completed) {
-          //_controller.reverse();
-        } else if (status == AnimationStatus.dismissed) {
-          _controller.forward();
-        }
-      });
+    )..addStatusListener(
+        (status) {
+          if (status == AnimationStatus.completed) {
+            //_controller.reverse();
+          } else if (status == AnimationStatus.dismissed) {
+            _controller.forward();
+          }
+        },
+      );
 
     _controller.forward();
   }
@@ -51,21 +53,24 @@ class StaggeredTextAnimator extends StatelessWidget {
   final Animation<double> descOpacityAnimation;
 
   StaggeredTextAnimator({Key key, this.controller})
-      : greetingOpacityAnimation =
-            Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-          parent: controller,
-          curve: Interval(0.1, 0.4),
-        )),
-        nameOpacityAnimation =
-            Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-          parent: controller,
-          curve: Interval(0.4, 0.7),
-        )),
-        descOpacityAnimation =
-            Tween(begin: 0.0, end: 0.7).animate(CurvedAnimation(
-          parent: controller,
-          curve: Interval(0.7, 1.0),
-        )),
+      : greetingOpacityAnimation = Tween(begin: 0.0, end: 1.0).animate(
+          CurvedAnimation(
+            parent: controller,
+            curve: Interval(0.1, 0.4),
+          ),
+        ),
+        nameOpacityAnimation = Tween(begin: 0.0, end: 1.0).animate(
+          CurvedAnimation(
+            parent: controller,
+            curve: Interval(0.4, 0.7),
+          ),
+        ),
+        descOpacityAnimation = Tween(begin: 0.0, end: 0.7).animate(
+          CurvedAnimation(
+            parent: controller,
+            curve: Interval(0.7, 1.0),
+          ),
+        ),
         super(key: key);
 
   @override
@@ -93,29 +98,43 @@ class StaggeredTextAnimator extends StatelessWidget {
             ),
             Opacity(
               opacity: nameOpacityAnimation.value,
-              child: Text("Renzo Olivares.",
-                  style: TextStyle(
-                      color: Colors.indigo[100],
-                      fontSize: 66,
-                      fontWeight: FontWeight.w600)),
+              child: Text(
+                "Renzo Olivares.",
+                style: TextStyle(
+                  color: Colors.indigo[100],
+                  fontSize: 66,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
             ),
             Opacity(
               opacity: descOpacityAnimation.value,
-              child: Text("I build things with code.",
-                  style: TextStyle(
-                      color: Colors.indigo[100],
-                      fontSize: 56,
-                      fontWeight: FontWeight.w500)),
+              child: Text(
+                "I build things with code.",
+                style: TextStyle(
+                  color: Colors.indigo[100],
+                  fontSize: 56,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
             ),
             SizedBox(height: 20),
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                _SocialButton(MdiIcons.linkedin, 'LinkedIn', () {}),
+                _SocialButton(
+                  MdiIcons.linkedin,
+                  'LinkedIn',
+                  () {},
+                ),
                 SizedBox(
                   width: 8,
                 ),
-                _SocialButton(MdiIcons.github, 'Github', () {}),
+                _SocialButton(
+                  MdiIcons.github,
+                  'Github',
+                  () {},
+                ),
               ],
             ),
           ],

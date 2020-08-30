@@ -57,21 +57,24 @@ class _AdaptiveNavState extends State<AdaptiveNav> {
   }
 
   void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
+    setState(
+      () {
+        _selectedIndex = index;
+      },
+    );
   }
 }
 
 class _BuildDesktopNav extends StatefulWidget {
-  const _BuildDesktopNav(
-      {Key key,
-      this.selectedIndex,
-      this.dark,
-      this.extended,
-      this.routes,
-      this.onItemTapped})
-      : super(key: key);
+  const _BuildDesktopNav({
+    Key key,
+    this.selectedIndex,
+    this.dark,
+    this.extended,
+    this.routes,
+    this.onItemTapped,
+  }) : super(key: key);
+
   final selectedIndex;
   final bool dark;
   final bool extended;
@@ -133,9 +136,11 @@ class _BuildDesktopNavState extends State<_BuildDesktopNav> {
                 InkWell(
                   child: Icon(Icons.menu),
                   onTap: () {
-                    setState(() {
-                      _isExtended = !_isExtended;
-                    });
+                    setState(
+                      () {
+                        _isExtended = !_isExtended;
+                      },
+                    );
                   },
                 ),
               ],
@@ -144,9 +149,11 @@ class _BuildDesktopNavState extends State<_BuildDesktopNav> {
             selectedIndex: widget.selectedIndex,
             selectedLabelTextStyle: TextStyle(color: Colors.cyan[600]),
             unselectedIconTheme: IconThemeData(
-                color: widget.dark ? Colors.grey[400] : Colors.black),
-            unselectedLabelTextStyle:
-                TextStyle(color: widget.dark ? Colors.grey[400] : Colors.black),
+              color: widget.dark ? Colors.grey[400] : Colors.black,
+            ),
+            unselectedLabelTextStyle: TextStyle(
+              color: widget.dark ? Colors.grey[400] : Colors.black,
+            ),
             onDestinationSelected: widget.onItemTapped,
           ),
           VerticalDivider(thickness: 1, width: 1),
@@ -162,8 +169,13 @@ class _BuildDesktopNavState extends State<_BuildDesktopNav> {
 }
 
 class _BuildMobileNav extends StatelessWidget {
-  const _BuildMobileNav(
-      {this.selectedIndex, this.isDark, this.routes, this.onItemTapped});
+  const _BuildMobileNav({
+    this.selectedIndex,
+    this.isDark,
+    this.routes,
+    this.onItemTapped,
+  });
+
   final selectedIndex;
   final bool isDark;
   final List routes;

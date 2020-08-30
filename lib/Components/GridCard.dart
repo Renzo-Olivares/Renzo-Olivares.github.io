@@ -2,7 +2,11 @@ import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 
 class GridCard extends StatelessWidget {
-  const GridCard({this.darkPreview, this.lightPreview, this.openChild});
+  const GridCard({
+    this.darkPreview,
+    this.lightPreview,
+    this.openChild,
+  });
 
   final String darkPreview;
   final String lightPreview;

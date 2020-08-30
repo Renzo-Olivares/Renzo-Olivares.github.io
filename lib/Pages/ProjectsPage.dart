@@ -49,7 +49,7 @@ class ProjectsPage extends StatelessWidget {
                       darkPreview: project.darkPreview,
                       lightPreview: project.lightPreview,
                       openChild: project.openContainer,
-                    )
+                    ),
                 ],
               ),
             ),
@@ -61,7 +61,11 @@ class ProjectsPage extends StatelessWidget {
 }
 
 class _ProjectInfo {
-  const _ProjectInfo({this.darkPreview, this.lightPreview, this.openContainer});
+  const _ProjectInfo({
+    this.darkPreview,
+    this.lightPreview,
+    this.openContainer,
+  });
 
   final String darkPreview;
   final String lightPreview;
