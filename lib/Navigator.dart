@@ -17,10 +17,8 @@ class AdaptiveNav extends StatefulWidget {
 
 class _AdaptiveNavState extends State<AdaptiveNav> {
   int _selectedIndex = 0;
-  Brightness _brightnessValue;
-  bool _isDark;
 
-  final _pages = <Widget>[
+  final _pages = [
     const AboutPage(),
     const ProjectsPage(),
     const WorkPage(),
@@ -29,27 +27,15 @@ class _AdaptiveNavState extends State<AdaptiveNav> {
 
   @override
   Widget build(BuildContext context) {
-    _brightnessValue = MediaQuery.of(context).platformBrightness;
-    _isDark = _brightnessValue == Brightness.dark;
-
     return ResponsiveWidget(
       desktopScreen: _BuildDesktopNav(
         selectedIndex: _selectedIndex,
-        dark: _isDark,
-        extended: true,
-        routes: _pages,
-        onItemTapped: _onItemTapped,
-      ),
-      tabletScreen: _BuildDesktopNav(
-        selectedIndex: _selectedIndex,
-        extended: false,
-        dark: _isDark,
+        extended: ResponsiveWidget.isTablet(context) ? false : true,
         routes: _pages,
         onItemTapped: _onItemTapped,
       ),
       mobileScreen: _BuildMobileNav(
         selectedIndex: _selectedIndex,
-        isDark: _isDark,
         routes: _pages,
         onItemTapped: _onItemTapped,
       ),
@@ -69,14 +55,12 @@ class _BuildDesktopNav extends StatefulWidget {
   const _BuildDesktopNav({
     Key key,
     this.selectedIndex,
-    this.dark,
     this.extended,
     this.routes,
     this.onItemTapped,
   }) : super(key: key);
 
   final selectedIndex;
-  final bool dark;
   final bool extended;
   final List routes;
   final void Function(int) onItemTapped;
@@ -145,15 +129,7 @@ class _BuildDesktopNavState extends State<_BuildDesktopNav> {
                 ),
               ],
             ),
-            selectedIconTheme: IconThemeData(color: Colors.cyan[600]),
             selectedIndex: widget.selectedIndex,
-            selectedLabelTextStyle: TextStyle(color: Colors.cyan[600]),
-            unselectedIconTheme: IconThemeData(
-              color: widget.dark ? Colors.grey[400] : Colors.black,
-            ),
-            unselectedLabelTextStyle: TextStyle(
-              color: widget.dark ? Colors.grey[400] : Colors.black,
-            ),
             onDestinationSelected: widget.onItemTapped,
           ),
           VerticalDivider(thickness: 1, width: 1),
@@ -171,32 +147,33 @@ class _BuildDesktopNavState extends State<_BuildDesktopNav> {
 class _BuildMobileNav extends StatelessWidget {
   const _BuildMobileNav({
     this.selectedIndex,
-    this.isDark,
     this.routes,
     this.onItemTapped,
   });
 
   final selectedIndex;
-  final bool isDark;
   final List routes;
   final void Function(int) onItemTapped;
 
   @override
   Widget build(BuildContext context) {
+    var colorScheme = Theme.of(context).colorScheme;
+
     return Scaffold(
       body: _ScreenTransitionBuilder(
-          currentScreen: routes.elementAt(selectedIndex)),
+        currentScreen: routes.elementAt(selectedIndex),
+      ),
       bottomNavigationBar: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           Divider(thickness: 1, height: 1),
           Theme(
             data: Theme.of(context).copyWith(
-              canvasColor: isDark ? Colors.grey[800] : Colors.white,
+              canvasColor: colorScheme.surface,
             ),
             child: BottomNavigationBar(
               currentIndex: selectedIndex,
-              items: const <BottomNavigationBarItem>[
+              items: const [
                 BottomNavigationBarItem(
                   icon: Icon(Icons.person_outline),
                   activeIcon: Icon(Icons.person),
@@ -219,13 +196,9 @@ class _BuildMobileNav extends StatelessWidget {
                 ),
               ],
               onTap: onItemTapped,
-              selectedItemColor: Colors.cyan[600],
-              selectedLabelStyle: TextStyle(color: Colors.cyan[600]),
+              selectedItemColor: colorScheme.primary,
+              unselectedItemColor: colorScheme.onSurface.withOpacity(0.64),
               showUnselectedLabels: true,
-              unselectedItemColor: isDark ? Colors.grey : Colors.black,
-              unselectedLabelStyle: TextStyle(
-                color: isDark ? Colors.grey : Colors.black,
-              ),
             ),
           ),
         ],
@@ -242,9 +215,9 @@ class _ScreenTransitionBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return PageTransitionSwitcher(
       child: currentScreen,
-      transitionBuilder: (Widget child, Animation<double> animation,
-          Animation<double> secondaryAnimation) {
+      transitionBuilder: (child, animation, secondaryAnimation) {
         return FadeThroughTransition(
+          fillColor: Theme.of(context).scaffoldBackgroundColor,
           child: child,
           animation: animation,
           secondaryAnimation: secondaryAnimation,
