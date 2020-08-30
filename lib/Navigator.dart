@@ -187,22 +187,22 @@ class _BuildMobileNav extends StatelessWidget {
                 BottomNavigationBarItem(
                   icon: Icon(Icons.person_outline),
                   activeIcon: Icon(Icons.person),
-                  title: Text('About'),
+                  label: 'About',
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.lightbulb_outline),
                   activeIcon: Icon(MdiIcons.lightbulb),
-                  title: Text('Projects'),
+                  label: 'Projects',
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(MdiIcons.briefcaseOutline),
                   activeIcon: Icon(Icons.work),
-                  title: Text('Work'),
+                  label: 'Work',
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(MdiIcons.clipboardTextOutline),
                   activeIcon: Icon(Icons.assignment),
-                  title: Text('Resume'),
+                  label: 'Resume',
                 ),
               ],
               onTap: onItemTapped,
