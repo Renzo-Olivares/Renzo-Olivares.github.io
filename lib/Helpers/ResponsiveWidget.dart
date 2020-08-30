@@ -1,3 +1,4 @@
+import 'package:adaptive_breakpoints/adaptive_breakpoints.dart';
 import 'package:flutter/material.dart';
 
 class ResponsiveWidget extends StatelessWidget {
@@ -10,25 +11,25 @@ class ResponsiveWidget extends StatelessWidget {
       : super(key: key);
 
   static bool isDesktop(BuildContext context) {
-    return MediaQuery.of(context).size.width > 1200;
+    return getWindowType(context) > AdaptiveWindowType.m;
   }
 
   static bool isTablet(BuildContext context) {
-    return MediaQuery.of(context).size.width > 800 &&
-        MediaQuery.of(context).size.width < 1200;
+    return getWindowType(context) == AdaptiveWindowType.m;
   }
 
   static bool isMobile(BuildContext context) {
-    return MediaQuery.of(context).size.width < 800;
+    return getWindowType(context) == AdaptiveWindowType.s;
   }
 
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        if (constraints.maxWidth > 1200) {
+        var windowType = getWindowType(context);
+        if (windowType > AdaptiveWindowType.m) {
           return desktopScreen;
-        } else if (constraints.maxWidth > 800 && constraints.maxWidth < 1200) {
+        } else if (windowType == AdaptiveWindowType.m) {
           return tabletScreen ?? desktopScreen;
         } else {
           return mobileScreen;
