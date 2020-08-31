@@ -21,6 +21,7 @@ class GridCard extends StatelessWidget {
       openColor: Theme.of(context).bottomAppBarColor,
       openBuilder: (context, openContainer) => openChild,
       closedColor: Theme.of(context).bottomAppBarColor,
+      closedElevation: 4,
       closedBuilder: (context, openContainer) {
         return Ink.image(
           image: AssetImage(

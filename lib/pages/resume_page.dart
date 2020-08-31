@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:renzo_portfolio/helpers/responsive_widget.dart';
+import 'package:renzo_portfolio/helpers/url_launcher.dart';
 
 class ResumePage extends StatelessWidget {
   const ResumePage({Key key}) : super(key: key);
@@ -35,7 +36,10 @@ class ResumePage extends StatelessWidget {
               ),
               SizedBox(height: 24),
               OutlinedButton.icon(
-                onPressed: () {},
+                onPressed: () => UrlLauncher.launchURL(
+                  'https://github.com/Renzo-Olivares/Renzo-Olivares.github.io/raw/revamp/assets/misc/renzo_tech_resume.pdf',
+                  'Resume',
+                ),
                 icon: Icon(Icons.download_sharp),
                 label: Text('Download'),
                 style: OutlinedButton.styleFrom(elevation: 4),
