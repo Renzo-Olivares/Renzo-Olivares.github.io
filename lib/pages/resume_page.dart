@@ -23,8 +23,11 @@ class ResumePage extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.075,
               ),
               Center(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.all(Radius.circular(8)),
+                child: Material(
+                  elevation: 4,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(12)),
+                  ),
                   child: Image.asset(
                     'assets/misc/resume.jpg',
                   ),
