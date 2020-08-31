@@ -9,6 +9,36 @@ import 'pages/projects_page.dart';
 import 'pages/resume_page.dart';
 import 'pages/work_page.dart';
 
+class _Destination {
+  const _Destination({this.unselectedIcon, this.selectedIcon, this.title});
+  final IconData unselectedIcon;
+  final IconData selectedIcon;
+  final String title;
+}
+
+final destinations = [
+  _Destination(
+    unselectedIcon: Icons.person_outlined,
+    selectedIcon: Icons.person,
+    title: 'About',
+  ),
+  _Destination(
+    unselectedIcon: Icons.lightbulb_outlined,
+    selectedIcon: Icons.lightbulb,
+    title: 'Projects',
+  ),
+  _Destination(
+    unselectedIcon: Icons.work_outline,
+    selectedIcon: Icons.work,
+    title: 'Work',
+  ),
+  _Destination(
+    unselectedIcon: Icons.assignment_outlined,
+    selectedIcon: Icons.assignment,
+    title: 'Resume',
+  ),
+];
+
 class AdaptiveNav extends StatefulWidget {
   AdaptiveNav({Key key}) : super(key: key);
 
@@ -105,26 +135,12 @@ class _BuildDesktopNavState extends State<_BuildDesktopNav> {
                 child: IntrinsicHeight(
                   child: NavigationRail(
                     destinations: [
-                      NavigationRailDestination(
-                        icon: Icon(Icons.person_outline),
-                        selectedIcon: Icon(Icons.person),
-                        label: Text('About'),
-                      ),
-                      NavigationRailDestination(
-                        icon: Icon(Icons.lightbulb_outline),
-                        selectedIcon: Icon(Icons.lightbulb),
-                        label: Text('Projects'),
-                      ),
-                      NavigationRailDestination(
-                        icon: Icon(Icons.work_outline),
-                        selectedIcon: Icon(Icons.work),
-                        label: Text('Work'),
-                      ),
-                      NavigationRailDestination(
-                        icon: Icon(Icons.assignment_outlined),
-                        selectedIcon: Icon(Icons.assignment),
-                        label: Text('Resume'),
-                      ),
+                      for (var destination in destinations)
+                        NavigationRailDestination(
+                          icon: Icon(destination.unselectedIcon),
+                          selectedIcon: Icon(destination.selectedIcon),
+                          label: Text(destination.title),
+                        ),
                     ],
                     extended: _isExtended,
                     labelType: NavigationRailLabelType.none,
@@ -191,27 +207,13 @@ class _BuildMobileNav extends StatelessWidget {
             ),
             child: BottomNavigationBar(
               currentIndex: selectedIndex,
-              items: const [
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.person_outline),
-                  activeIcon: Icon(Icons.person),
-                  label: 'About',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.lightbulb_outline),
-                  activeIcon: Icon(Icons.lightbulb),
-                  label: 'Projects',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.work_outline),
-                  activeIcon: Icon(Icons.work),
-                  label: 'Work',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.assignment_outlined),
-                  activeIcon: Icon(Icons.assignment),
-                  label: 'Resume',
-                ),
+              items: [
+                for (var destination in destinations)
+                  BottomNavigationBarItem(
+                    icon: Icon(destination.unselectedIcon),
+                    activeIcon: Icon(destination.selectedIcon),
+                    label: destination.title,
+                  ),
               ],
               onTap: onItemTapped,
               selectedItemColor: colorScheme.primary,
