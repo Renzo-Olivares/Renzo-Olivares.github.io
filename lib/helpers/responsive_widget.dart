@@ -22,6 +22,10 @@ class ResponsiveWidget extends StatelessWidget {
     return getWindowType(context) == AdaptiveWindowType.s;
   }
 
+  static bool isBigScreen(BuildContext context) {
+    return getWindowType(context) > AdaptiveWindowType.s;
+  }
+
   @override
   Widget build(BuildContext context) {
     var windowType = getWindowType(context);

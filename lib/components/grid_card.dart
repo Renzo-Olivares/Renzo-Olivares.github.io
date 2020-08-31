@@ -14,7 +14,7 @@ class GridCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool isDark = MediaQuery.of(context).platformBrightness == Brightness.dark;
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
 
     return OpenContainer(
       transitionType: ContainerTransitionType.fade,

@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 import 'Model/portfolio_state.dart';
-import 'Navigator.dart';
+import 'adaptive_navigation.dart';
 import 'colors.dart';
 
 class MyApp extends StatelessWidget {

@@ -51,14 +51,14 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-     - assets/project_previews/dark_flutter_safety.png
-     - assets/project_previews/light_flutter_safety.png
-     - assets/project_previews/dark_flutter_twitter.png
-     - assets/project_previews/light_flutter_twitter.png
-     - assets/project_previews/dark_flutter_units.png
-     - assets/project_previews/light_flutter_units.png
-     - assets/project_previews/dark_simple_todo.png
-     - assets/project_previews/light_simple_todo.png
+     - assets/project_previews/dark/dark_flutter_safety.png
+     - assets/project_previews/dark/dark_flutter_twitter.png
+     - assets/project_previews/dark/dark_flutter_units.png
+     - assets/project_previews/dark/dark_simple_todo.png
+     - assets/project_previews/light/light_flutter_safety.png
+     - assets/project_previews/light/light_flutter_twitter.png
+     - assets/project_previews/light/light_flutter_units.png
+     - assets/project_previews/light/light_simple_todo.png
      - assets/google_fonts/Rubik-Black.ttf
      - assets/google_fonts/Rubik-BlackItalic.ttf
      - assets/google_fonts/Rubik-Bold.ttf
@@ -73,6 +73,11 @@ flutter:
      - assets/google_fonts/Rubik-Regular.ttf
      - assets/google_fonts/Rubik-SemiBold.ttf
      - assets/google_fonts/Rubik-SemiBoldItalic.ttf
+     - assets/misc/resume.jpg
+     - assets/misc/profile_picture.png
+     - assets/logos/codeforfun-logo.png
+     - assets/logos/kipp-logo.png
+     - assets/logos/schoolzilla-logo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

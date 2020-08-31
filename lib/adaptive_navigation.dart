@@ -1,14 +1,13 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
 
-import 'Helpers/ResponsiveWidget.dart';
+import 'Helpers/responsive_widget.dart';
 import 'Model/portfolio_state.dart';
-import 'Pages/AboutPage.dart';
-import 'Pages/ProjectsPage.dart';
-import 'Pages/ResumePage.dart';
-import 'Pages/WorkPage.dart';
+import 'Pages/about_page.dart';
+import 'Pages/projects_page.dart';
+import 'Pages/resume_page.dart';
+import 'Pages/work_page.dart';
 
 class AdaptiveNav extends StatefulWidget {
   AdaptiveNav({Key key}) : super(key: key);
@@ -99,49 +98,58 @@ class _BuildDesktopNavState extends State<_BuildDesktopNav> {
     return Scaffold(
       body: Row(
         children: [
-          NavigationRail(
-            destinations: [
-              NavigationRailDestination(
-                icon: Icon(Icons.person_outline),
-                selectedIcon: Icon(Icons.person),
-                label: Text('About'),
-              ),
-              NavigationRailDestination(
-                icon: Icon(Icons.lightbulb_outline),
-                selectedIcon: Icon(MdiIcons.lightbulb),
-                label: Text('Projects'),
-              ),
-              NavigationRailDestination(
-                icon: Icon(MdiIcons.briefcaseOutline),
-                selectedIcon: Icon(Icons.work),
-                label: Text('Work'),
-              ),
-              NavigationRailDestination(
-                icon: Icon(MdiIcons.clipboardTextOutline),
-                selectedIcon: Icon(Icons.assignment),
-                label: Text('Resume'),
-              ),
-            ],
-            extended: _isExtended,
-            labelType: NavigationRailLabelType.none,
-            leading: Row(
-              children: [
-                SizedBox(width: 25),
-                InkWell(
-                  child: Icon(Icons.menu),
-                  onTap: () {
-                    setState(
-                      () {
-                        _isExtended = !_isExtended;
-                      },
-                    );
-                  },
+          LayoutBuilder(builder: (context, constraints) {
+            return SingleChildScrollView(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                child: IntrinsicHeight(
+                  child: NavigationRail(
+                    destinations: [
+                      NavigationRailDestination(
+                        icon: Icon(Icons.person_outline),
+                        selectedIcon: Icon(Icons.person),
+                        label: Text('About'),
+                      ),
+                      NavigationRailDestination(
+                        icon: Icon(Icons.lightbulb_outline),
+                        selectedIcon: Icon(Icons.lightbulb),
+                        label: Text('Projects'),
+                      ),
+                      NavigationRailDestination(
+                        icon: Icon(Icons.work_outline),
+                        selectedIcon: Icon(Icons.work),
+                        label: Text('Work'),
+                      ),
+                      NavigationRailDestination(
+                        icon: Icon(Icons.assignment_outlined),
+                        selectedIcon: Icon(Icons.assignment),
+                        label: Text('Resume'),
+                      ),
+                    ],
+                    extended: _isExtended,
+                    labelType: NavigationRailLabelType.none,
+                    leading: Row(
+                      children: [
+                        SizedBox(width: 24),
+                        InkWell(
+                          child: Icon(Icons.menu),
+                          onTap: () {
+                            setState(
+                              () {
+                                _isExtended = !_isExtended;
+                              },
+                            );
+                          },
+                        ),
+                      ],
+                    ),
+                    selectedIndex: widget.selectedIndex,
+                    onDestinationSelected: widget.onItemTapped,
+                  ),
                 ),
-              ],
-            ),
-            selectedIndex: widget.selectedIndex,
-            onDestinationSelected: widget.onItemTapped,
-          ),
+              ),
+            );
+          }),
           VerticalDivider(thickness: 1, width: 1),
           Expanded(
             child: _ScreenTransitionBuilder(
@@ -191,16 +199,16 @@ class _BuildMobileNav extends StatelessWidget {
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.lightbulb_outline),
-                  activeIcon: Icon(MdiIcons.lightbulb),
+                  activeIcon: Icon(Icons.lightbulb),
                   label: 'Projects',
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(MdiIcons.briefcaseOutline),
+                  icon: Icon(Icons.work_outline),
                   activeIcon: Icon(Icons.work),
                   label: 'Work',
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(MdiIcons.clipboardTextOutline),
+                  icon: Icon(Icons.assignment_outlined),
                   activeIcon: Icon(Icons.assignment),
                   label: 'Resume',
                 ),
