@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:renzo_portfolio/Helpers/responsive_widget.dart';
+import 'package:renzo_portfolio/helpers/responsive_widget.dart';
 
 class ResumePage extends StatelessWidget {
   const ResumePage({Key key}) : super(key: key);
