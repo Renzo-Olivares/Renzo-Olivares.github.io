@@ -28,7 +28,8 @@ class GridCard extends StatelessWidget {
           ),
           fit: BoxFit.fill,
           child: InkWell(
-            onTap: openContainer,
+//            onTap: openContainer,
+            onTap: () {},
           ),
         );
       },
