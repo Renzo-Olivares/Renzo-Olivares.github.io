@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
-import 'package:renzo_portfolio/Model/portfolio_state.dart';
 import 'package:renzo_portfolio/helpers/url_launcher.dart';
+import 'package:renzo_portfolio/model/portfolio_state.dart';
 
 class AboutPage extends StatefulWidget {
   const AboutPage({Key key}) : super(key: key);

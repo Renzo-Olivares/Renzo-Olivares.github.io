@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-import 'Model/portfolio_state.dart';
 import 'adaptive_navigation.dart';
 import 'colors.dart';
+import 'model/portfolio_state.dart';
 
 class MyApp extends StatelessWidget {
   @override

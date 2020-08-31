@@ -2,12 +2,12 @@ import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'Helpers/responsive_widget.dart';
-import 'Model/portfolio_state.dart';
-import 'Pages/about_page.dart';
-import 'Pages/projects_page.dart';
-import 'Pages/resume_page.dart';
-import 'Pages/work_page.dart';
+import 'helpers/responsive_widget.dart';
+import 'model/portfolio_state.dart';
+import 'pages/about_page.dart';
+import 'pages/projects_page.dart';
+import 'pages/resume_page.dart';
+import 'pages/work_page.dart';
 
 class AdaptiveNav extends StatefulWidget {
   AdaptiveNav({Key key}) : super(key: key);
