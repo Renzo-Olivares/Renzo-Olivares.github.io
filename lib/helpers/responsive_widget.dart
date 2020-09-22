@@ -11,27 +11,27 @@ class ResponsiveWidget extends StatelessWidget {
       : super(key: key);
 
   static bool isDesktop(BuildContext context) {
-    return getWindowType(context) > AdaptiveWindowType.m;
+    return getWindowType(context) > AdaptiveWindowType.medium;
   }
 
   static bool isTablet(BuildContext context) {
-    return getWindowType(context) == AdaptiveWindowType.m;
+    return getWindowType(context) == AdaptiveWindowType.medium;
   }
 
   static bool isMobile(BuildContext context) {
-    return getWindowType(context) == AdaptiveWindowType.s;
+    return getWindowType(context) == AdaptiveWindowType.small;
   }
 
   static bool isBigScreen(BuildContext context) {
-    return getWindowType(context) > AdaptiveWindowType.s;
+    return getWindowType(context) > AdaptiveWindowType.small;
   }
 
   @override
   Widget build(BuildContext context) {
     var windowType = getWindowType(context);
-    if (windowType > AdaptiveWindowType.m) {
+    if (windowType > AdaptiveWindowType.medium) {
       return desktopScreen;
-    } else if (windowType == AdaptiveWindowType.m) {
+    } else if (windowType == AdaptiveWindowType.medium) {
       return tabletScreen ?? desktopScreen;
     } else {
       return mobileScreen;
