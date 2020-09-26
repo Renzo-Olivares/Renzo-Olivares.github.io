@@ -29,9 +29,13 @@ class _AboutPageState extends State<AboutPage>
     )..addStatusListener(
         (status) {
           if (status == AnimationStatus.completed) {
-//            _controller.reverse();
+            showWelcomeScreen = false;
+            _controller.reverse();
           } else if (status == AnimationStatus.dismissed) {
-            _controller.forward();
+            // _controller.forward();
+            if (showWelcomeScreen) {
+              _controller.forward();
+            }
           }
         },
       );
@@ -65,6 +69,7 @@ class WelcomeScreenAnimator extends StatelessWidget {
   final Animation<double> greetingOpacityAnimation;
   final Animation<double> nameOpacityAnimation;
   final Animation<double> descOpacityAnimation;
+  final Animation<Offset> profileAvatarSlide;
 
   WelcomeScreenAnimator({Key key, this.controller})
       : greetingOpacityAnimation = Tween(begin: 0.0, end: 1.0).animate(
@@ -85,6 +90,15 @@ class WelcomeScreenAnimator extends StatelessWidget {
             curve: Interval(0.7, 1.0),
           ),
         ),
+        profileAvatarSlide = Tween(
+          begin: const Offset(10.0, 0),
+          end: Offset.zero,
+        ).animate(
+          CurvedAnimation(
+            parent: controller,
+            curve: Interval(0.7, 1.0),
+          ),
+        ),
         super(key: key);
 
   @override
@@ -99,6 +113,12 @@ class WelcomeScreenAnimator extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.end,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        SlideTransition(
+          position: profileAvatarSlide,
+          child: FlutterLogo(
+            size: 150.0,
+          ),
+        ),
         Opacity(
           opacity: greetingOpacityAnimation.value,
           child: Text(

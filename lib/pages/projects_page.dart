@@ -4,24 +4,32 @@ import '../components/grid_card.dart';
 import '../helpers/responsive_widget.dart';
 
 final _projects = <_ProjectInfo>[
-  const _ProjectInfo(
-    darkPreview: 'assets/project_previews/dark/dark_flutter_safety.png',
-    lightPreview: 'assets/project_previews/light/light_flutter_safety.png',
-    openContainer: _DetailsPage(),
-  ),
+  // const _ProjectInfo(
+  //   darkPreview: 'assets/project_previews/dark/dark_flutter_safety.png',
+  //   lightPreview: 'assets/project_previews/light/light_flutter_safety.png',
+  // title: 'Flutter Safety',
+  // year: '2020',
+  //   openContainer: _DetailsPage(),
+  // ),
   const _ProjectInfo(
     darkPreview: 'assets/project_previews/dark/dark_flutter_twitter.png',
     lightPreview: 'assets/project_previews/light/light_flutter_twitter.png',
+    title: 'Flutter Twitter',
+    year: '2019',
     openContainer: _DetailsPage(),
   ),
   const _ProjectInfo(
     darkPreview: 'assets/project_previews/dark/dark_flutter_units.png',
     lightPreview: 'assets/project_previews/light/light_flutter_units.png',
+    title: 'Flutter Units',
+    year: '2019',
     openContainer: _DetailsPage(),
   ),
   const _ProjectInfo(
     darkPreview: 'assets/project_previews/dark/dark_simple_todo.png',
     lightPreview: 'assets/project_previews/light/light_simple_todo.png',
+    title: 'Simple Todo',
+    year: '2019',
     openContainer: _DetailsPage(),
   ),
 ];
@@ -50,7 +58,9 @@ class _ProjectsList extends StatelessWidget {
           child: GridView.count(
             crossAxisCount: ResponsiveWidget.isDesktop(context)
                 ? 3
-                : ResponsiveWidget.isTablet(context) ? 2 : 1,
+                : ResponsiveWidget.isTablet(context)
+                    ? 2
+                    : 1,
             padding: EdgeInsetsDirectional.only(
               start: 48,
               end: 48,
@@ -64,6 +74,8 @@ class _ProjectsList extends StatelessWidget {
                 GridCard(
                   darkPreview: project.darkPreview,
                   lightPreview: project.lightPreview,
+                  title: project.title,
+                  year: project.year,
                   openChild: project.openContainer,
                 ),
             ],
@@ -78,11 +90,15 @@ class _ProjectInfo {
   const _ProjectInfo({
     this.darkPreview,
     this.lightPreview,
+    this.title,
+    this.year,
     this.openContainer,
   });
 
   final String darkPreview;
   final String lightPreview;
+  final String title;
+  final String year;
   final Widget openContainer;
 }
 

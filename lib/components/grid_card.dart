@@ -5,33 +5,59 @@ class GridCard extends StatelessWidget {
   const GridCard({
     this.darkPreview,
     this.lightPreview,
+    this.title,
+    this.year,
     this.openChild,
   });
 
   final String darkPreview;
   final String lightPreview;
+  final String title;
+  final String year;
   final Widget openChild;
 
   @override
   Widget build(BuildContext context) {
-    bool isDark = Theme.of(context).brightness == Brightness.dark;
+    var theme = Theme.of(context);
+    var isDark = theme.brightness == Brightness.dark;
 
     return OpenContainer(
-      transitionType: ContainerTransitionType.fade,
-      openColor: Theme.of(context).bottomAppBarColor,
+      openColor: theme.bottomAppBarColor,
       openBuilder: (context, openContainer) => openChild,
-      closedColor: Theme.of(context).bottomAppBarColor,
-      closedElevation: 4,
+      closedColor: theme.scaffoldBackgroundColor,
+      closedElevation: 8,
+      tappable: false,
       closedBuilder: (context, openContainer) {
-        return Ink.image(
-          image: AssetImage(
-            isDark ? darkPreview : lightPreview,
-          ),
-          fit: BoxFit.fill,
-          child: InkWell(
-//            onTap: openContainer,
-            onTap: () {},
-          ),
+        return Stack(
+          clipBehavior: Clip.none,
+          fit: StackFit.expand,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Image.asset(
+                isDark ? darkPreview : lightPreview,
+                fit: BoxFit.fill,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsetsDirectional.only(bottom: 8, end: 8),
+              child: Align(
+                alignment: AlignmentDirectional.bottomEnd,
+                child: Text(
+                  '$title - $year',
+                  style: theme.textTheme.subtitle1.copyWith(
+                    color: Theme.of(context)
+                        .colorScheme
+                        .onBackground
+                        .withOpacity(0.64),
+                  ),
+                ),
+              ),
+            ),
+            InkWell(
+              onTap: openContainer,
+            ),
+          ],
         );
       },
     );

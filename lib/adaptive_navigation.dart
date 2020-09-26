@@ -146,15 +146,13 @@ class _BuildDesktopNavState extends State<_BuildDesktopNav> {
                     labelType: NavigationRailLabelType.none,
                     leading: Row(
                       children: [
-                        SizedBox(width: 24),
-                        InkWell(
-                          child: Icon(Icons.menu),
-                          onTap: () {
-                            setState(
-                              () {
-                                _isExtended = !_isExtended;
-                              },
-                            );
+                        SizedBox(width: 16),
+                        IconButton(
+                          icon: Icon(Icons.menu),
+                          onPressed: () {
+                            setState(() {
+                              _isExtended = !_isExtended;
+                            });
                           },
                         ),
                       ],

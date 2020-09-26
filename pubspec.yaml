@@ -73,7 +73,8 @@ flutter:
      - assets/google_fonts/Rubik-Regular.ttf
      - assets/google_fonts/Rubik-SemiBold.ttf
      - assets/google_fonts/Rubik-SemiBoldItalic.ttf
-     - assets/misc/resume.jpg
+     - assets/misc/resume.png
+     - assets/misc/resume-dark.png
      - assets/misc/profile_picture.png
      - assets/logos/codeforfun-logo.png
      - assets/logos/kipp-logo.png

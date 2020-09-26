@@ -8,6 +8,7 @@ class ResumePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var isBigScreen = ResponsiveWidget.isBigScreen(context);
+    var isDark = Theme.of(context).brightness == Brightness.dark;
     double horizontalPadding = isBigScreen ? 0 : 20;
 
     return Scaffold(
@@ -30,7 +31,9 @@ class ResumePage extends StatelessWidget {
                     borderRadius: BorderRadius.all(Radius.circular(12)),
                   ),
                   child: Image.asset(
-                    'assets/misc/resume.jpg',
+                    isDark
+                        ? 'assets/misc/resume-dark.png'
+                        : 'assets/misc/resume.png',
                   ),
                 ),
               ),

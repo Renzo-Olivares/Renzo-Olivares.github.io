@@ -27,17 +27,9 @@ class MyApp extends StatelessWidget {
 ThemeData _buildLightTheme(BuildContext context) {
   final base = ThemeData.light();
   return base.copyWith(
-    primaryColor: PortfolioColors.blue500,
-    colorScheme: ColorScheme.light(
-      primary: PortfolioColors.blue500,
-      primaryVariant: PortfolioColors.blue600,
-      secondary: PortfolioColors.yellow400,
-      secondaryVariant: PortfolioColors.yellow500,
-      surface: PortfolioColors.yellow400,
-      error: PortfolioColors.brightPink700,
-    ),
+    colorScheme: ColorScheme.light(primary: PortfolioColors.blue500),
     textTheme: GoogleFonts.rubikTextTheme(),
-    scaffoldBackgroundColor: Colors.blueGrey[50],
+    scaffoldBackgroundColor: PortfolioColors.lightBlue400,
     visualDensity: VisualDensity.adaptivePlatformDensity,
   );
 }
@@ -46,12 +38,8 @@ ThemeData _buildDarkTheme(BuildContext context) {
   final base = ThemeData.dark();
   return base.copyWith(
     colorScheme: const ColorScheme.dark(
-      primary: PortfolioColors.brightPink400,
-      primaryVariant: PortfolioColors.brightPink500,
-      secondary: PortfolioColors.blue400,
-      secondaryVariant: PortfolioColors.blue500,
+      primary: PortfolioColors.lightBlue500,
       surface: PortfolioColors.blue400,
-      error: PortfolioColors.yellow400,
     ),
     textTheme: GoogleFonts.rubikTextTheme(),
     visualDensity: VisualDensity.adaptivePlatformDensity,
