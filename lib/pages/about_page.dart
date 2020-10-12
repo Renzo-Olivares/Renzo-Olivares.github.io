@@ -139,23 +139,9 @@ class WelcomeScreenAnimator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      mainAxisSize: MainAxisSize.max,
+    return Stack(
       children: [
-        Selector<PortfolioState, bool>(
-          selector: (context, portfolioState) =>
-              portfolioState.showWelcomeScreen,
-          builder: (context, showWelcome, child) {
-            return Visibility(
-              visible: showWelcome,
-              child: AnimatedBuilder(
-                animation: controller,
-                builder: _buildWelcomeScreen,
-              ),
-            );
-          },
-        ),
+        AnimatedBuilder(animation: controller, builder: _buildWelcomeScreen),
         AnimatedBuilder(animation: controller2, builder: _buildAboutDetails),
       ],
     );
@@ -164,6 +150,8 @@ class WelcomeScreenAnimator extends StatelessWidget {
   Widget _buildAboutDetails(BuildContext context, Widget child) {
     final aboutDetails =
         'Hello there, I\'m Renzo! A 23 y/o aspiring software engineer based out of the Bay Area. I am currently attending the University of California, Riverside under the Bourne\'s College of Engineering for Computer Science. I have a passion for developing on mobile platforms, having previously worked on various custom Android ROMS and modifications, and more recently having interned for Google on the Material Flutter team.';
+
+    var colorScheme = Theme.of(context).colorScheme;
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
@@ -182,9 +170,7 @@ class WelcomeScreenAnimator extends StatelessWidget {
           opacity: nameOpacityAnimation2.value,
           child: Text(
             "Renzo Olivares",
-            style: TextStyle(
-              fontSize: 56,
-            ),
+            style: TextStyle(fontSize: 56, color: colorScheme.onSurface),
           ),
         ),
         SizedBox(height: 20),
@@ -195,7 +181,13 @@ class WelcomeScreenAnimator extends StatelessWidget {
           ),
           child: Opacity(
             opacity: aboutDetailsOpacityAnimation.value,
-            child: Text(aboutDetails),
+            child: Text(
+              aboutDetails,
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyText2
+                  .copyWith(color: colorScheme.onSurface),
+            ),
           ),
         ),
         SizedBox(height: 20),

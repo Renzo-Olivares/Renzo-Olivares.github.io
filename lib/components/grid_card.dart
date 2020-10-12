@@ -1,7 +1,6 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
-
-import '../helpers/url_launcher.dart';
+import 'package:renzo_portfolio/helpers/url_launcher.dart';
 
 class GridCard extends StatelessWidget {
   const GridCard({

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../components/grid_card.dart';
-import '../helpers/responsive_widget.dart';
+import 'package:renzo_portfolio/components/grid_card.dart';
+import 'package:renzo_portfolio/helpers/responsive_widget.dart';
 
 final _projects = <_ProjectInfo>[
   const _ProjectInfo(
