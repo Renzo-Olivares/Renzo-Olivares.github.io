@@ -140,6 +140,7 @@ class WelcomeScreenAnimator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      alignment: Alignment.center,
       children: [
         AnimatedBuilder(animation: controller, builder: _buildWelcomeScreen),
         AnimatedBuilder(animation: controller2, builder: _buildAboutDetails),

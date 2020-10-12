@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<PortfolioState>.value(value: PortfolioState())
       ],
       child: MaterialApp(
-        title: 'Renzo\'s Portfolio',
+        title: 'Renzo Olivares',
         darkTheme: _buildDarkTheme(context),
         debugShowCheckedModeBanner: false,
         theme: _buildLightTheme(context),
@@ -27,7 +27,10 @@ class MyApp extends StatelessWidget {
 ThemeData _buildLightTheme(BuildContext context) {
   final base = ThemeData.light();
   return base.copyWith(
-    colorScheme: ColorScheme.light(primary: PortfolioColors.blue500),
+    primaryColor: PortfolioColors.blue500,
+    colorScheme: ColorScheme.light(
+      primary: PortfolioColors.blue500,
+    ),
     textTheme: GoogleFonts.rubikTextTheme(),
     scaffoldBackgroundColor: PortfolioColors.lightBlue400,
     visualDensity: VisualDensity.adaptivePlatformDensity,
