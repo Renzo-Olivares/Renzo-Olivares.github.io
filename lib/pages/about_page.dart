@@ -11,9 +11,9 @@ class AboutPage extends StatefulWidget {
   _AboutPageState createState() => _AboutPageState();
 }
 
-class _AboutPageState extends State<AboutPage>
-    with SingleTickerProviderStateMixin {
+class _AboutPageState extends State<AboutPage> with TickerProviderStateMixin {
   AnimationController _controller;
+  AnimationController _controller2;
 
   @override
   void initState() {
@@ -24,21 +24,26 @@ class _AboutPageState extends State<AboutPage>
 
     _controller = AnimationController(
       value: showWelcomeScreen ? 0 : 1,
-      duration: Duration(milliseconds: 3500),
+      duration: const Duration(milliseconds: 7000),
       vsync: this,
     )..addStatusListener(
         (status) {
           if (status == AnimationStatus.completed) {
             showWelcomeScreen = false;
-            _controller.reverse();
+            _controller2.forward();
           } else if (status == AnimationStatus.dismissed) {
-            // _controller.forward();
             if (showWelcomeScreen) {
               _controller.forward();
             }
           }
         },
       );
+
+    _controller2 = AnimationController(
+      value: showWelcomeScreen ? 0 : 1,
+      duration: const Duration(milliseconds: 2000),
+      vsync: this,
+    );
 
     _controller.forward();
   }
@@ -51,6 +56,7 @@ class _AboutPageState extends State<AboutPage>
           padding: EdgeInsets.all(32),
           child: WelcomeScreenAnimator(
             controller: _controller,
+            controller2: _controller2,
           ),
         ),
       ),
@@ -60,123 +66,228 @@ class _AboutPageState extends State<AboutPage>
   @override
   void dispose() {
     _controller.dispose();
+    _controller2.dispose();
     super.dispose();
   }
 }
 
 class WelcomeScreenAnimator extends StatelessWidget {
   final AnimationController controller;
+  final AnimationController controller2;
   final Animation<double> greetingOpacityAnimation;
   final Animation<double> nameOpacityAnimation;
   final Animation<double> descOpacityAnimation;
-  final Animation<Offset> profileAvatarSlide;
+  final Animation<Offset> welcomeScreenSlideAnimation;
+  final Animation<double> profileAvatarOpacityAnimation;
+  final Animation<double> nameOpacityAnimation2;
+  final Animation<double> aboutDetailsOpacityAnimation;
+  final Animation<double> socialRowOpacityAnimation;
 
-  WelcomeScreenAnimator({Key key, this.controller})
+  WelcomeScreenAnimator({Key key, this.controller, this.controller2})
       : greetingOpacityAnimation = Tween(begin: 0.0, end: 1.0).animate(
           CurvedAnimation(
             parent: controller,
-            curve: Interval(0.1, 0.4),
+            curve: const Interval(0.1, 0.35),
           ),
         ),
         nameOpacityAnimation = Tween(begin: 0.0, end: 0.9).animate(
           CurvedAnimation(
             parent: controller,
-            curve: Interval(0.4, 0.7),
+            curve: const Interval(0.35, 0.6),
           ),
         ),
         descOpacityAnimation = Tween(begin: 0.0, end: 0.8).animate(
           CurvedAnimation(
             parent: controller,
-            curve: Interval(0.7, 1.0),
+            curve: const Interval(0.6, 0.85),
           ),
         ),
-        profileAvatarSlide = Tween(
-          begin: const Offset(10.0, 0),
-          end: Offset.zero,
+        welcomeScreenSlideAnimation = Tween(
+          begin: Offset.zero,
+          end: const Offset(10.0, 0),
         ).animate(
           CurvedAnimation(
             parent: controller,
-            curve: Interval(0.7, 1.0),
+            curve: const Interval(0.9, 1.0),
+          ),
+        ),
+        profileAvatarOpacityAnimation = Tween(begin: 0.0, end: 1.0).animate(
+          CurvedAnimation(
+            parent: controller2,
+            curve: const Interval(0.1, 0.3),
+          ),
+        ),
+        nameOpacityAnimation2 = Tween(begin: 0.0, end: 1.0).animate(
+          CurvedAnimation(
+            parent: controller2,
+            curve: const Interval(0.3, 0.6),
+          ),
+        ),
+        aboutDetailsOpacityAnimation = Tween(begin: 0.0, end: 1.0).animate(
+          CurvedAnimation(
+            parent: controller2,
+            curve: const Interval(0.6, 0.9),
+          ),
+        ),
+        socialRowOpacityAnimation = Tween(begin: 0.0, end: 1.0).animate(
+          CurvedAnimation(
+            parent: controller2,
+            curve: const Interval(0.9, 1.0),
           ),
         ),
         super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedBuilder(animation: controller, builder: _buildLayout);
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisSize: MainAxisSize.max,
+      children: [
+        Selector<PortfolioState, bool>(
+          selector: (context, portfolioState) =>
+              portfolioState.showWelcomeScreen,
+          builder: (context, showWelcome, child) {
+            return Visibility(
+              visible: showWelcome,
+              child: AnimatedBuilder(
+                animation: controller,
+                builder: _buildWelcomeScreen,
+              ),
+            );
+          },
+        ),
+        AnimatedBuilder(animation: controller2, builder: _buildAboutDetails),
+      ],
+    );
   }
 
-  Widget _buildLayout(BuildContext context, Widget child) {
-    var colorScheme = Theme.of(context).colorScheme;
+  Widget _buildAboutDetails(BuildContext context, Widget child) {
+    final aboutDetails =
+        'Hello there, I\'m Renzo! A 23 y/o aspiring software engineer based out of the Bay Area. I am currently attending the University of California, Riverside under the Bourne\'s College of Engineering for Computer Science. I have a passion for developing on mobile platforms, having previously worked on various custom Android ROMS and modifications, and more recently having interned for Google on the Material Flutter team.';
 
     return Column(
-      mainAxisAlignment: MainAxisAlignment.end,
-      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        SlideTransition(
-          position: profileAvatarSlide,
-          child: FlutterLogo(
-            size: 150.0,
+        Opacity(
+          opacity: profileAvatarOpacityAnimation.value,
+          child: CircleAvatar(
+            backgroundImage:
+                Image.asset('assets/misc/profile_picture.png').image,
+            radius: 100,
           ),
         ),
+        SizedBox(height: 20),
         Opacity(
-          opacity: greetingOpacityAnimation.value,
+          opacity: nameOpacityAnimation2.value,
           child: Text(
-            "Hi, my name is",
-            style: TextStyle(
-              fontSize: 16,
-              color: colorScheme.onSurface,
-            ),
-          ),
-        ),
-        Opacity(
-          opacity: nameOpacityAnimation.value,
-          child: Text(
-            "Renzo Olivares.",
-            style: TextStyle(
-              fontSize: 66,
-              fontWeight: FontWeight.w600,
-              color: colorScheme.onSurface,
-            ),
-          ),
-        ),
-        Opacity(
-          opacity: descOpacityAnimation.value,
-          child: Text(
-            "I build things with code.",
+            "Renzo Olivares",
             style: TextStyle(
               fontSize: 56,
-              fontWeight: FontWeight.w500,
-              color: colorScheme.onSurface,
             ),
           ),
         ),
         SizedBox(height: 20),
-        Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            _SocialButton(
-              MdiIcons.linkedin,
-              'LinkedIn',
-              () => UrlLauncher.launchURL(
-                'https://www.linkedin.com/in/510renzoolivares/',
+        ConstrainedBox(
+          constraints: BoxConstraints(
+            maxHeight: 500,
+            maxWidth: 500,
+          ),
+          child: Opacity(
+            opacity: aboutDetailsOpacityAnimation.value,
+            child: Text(aboutDetails),
+          ),
+        ),
+        SizedBox(height: 20),
+        Opacity(
+          opacity: socialRowOpacityAnimation.value,
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              _SocialButton(
+                MdiIcons.linkedin,
                 'LinkedIn',
+                () => UrlLauncher.launchURL(
+                  'https://www.linkedin.com/in/510renzoolivares/',
+                  'LinkedIn',
+                ),
               ),
-            ),
-            SizedBox(
-              width: 8,
-            ),
-            _SocialButton(
-              MdiIcons.github,
-              'Github',
-              () => UrlLauncher.launchURL(
-                'https://github.com/Renzo-Olivares',
+              SizedBox(
+                width: 8,
+              ),
+              _SocialButton(
+                MdiIcons.github,
                 'Github',
+                () => UrlLauncher.launchURL(
+                  'https://github.com/Renzo-Olivares',
+                  'Github',
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ],
+    );
+  }
+
+  Widget _buildWelcomeScreen(BuildContext context, Widget child) {
+    var colorScheme = Theme.of(context).colorScheme;
+
+    return _SlideAnimation(
+      tween: welcomeScreenSlideAnimation,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Opacity(
+            opacity: greetingOpacityAnimation.value,
+            child: Text(
+              "Hi, my name is",
+              style: TextStyle(
+                fontSize: 16,
+                color: colorScheme.onSurface,
+              ),
+            ),
+          ),
+          Opacity(
+            opacity: nameOpacityAnimation.value,
+            child: Text(
+              "Renzo Olivares.",
+              style: TextStyle(
+                fontSize: 66,
+                fontWeight: FontWeight.w600,
+                color: colorScheme.onSurface,
+              ),
+            ),
+          ),
+          Opacity(
+            opacity: descOpacityAnimation.value,
+            child: Text(
+              "I build things with code.",
+              style: TextStyle(
+                fontSize: 56,
+                fontWeight: FontWeight.w500,
+                color: colorScheme.onSurface,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _SlideAnimation extends StatelessWidget {
+  const _SlideAnimation({this.tween, this.child});
+
+  final Animation<Offset> tween;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return SlideTransition(
+      position: tween,
+      child: child,
     );
   }
 }

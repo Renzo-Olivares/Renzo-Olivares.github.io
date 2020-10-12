@@ -24,10 +24,10 @@ dependencies:
   flutter:
     sdk: flutter
   google_fonts: ^1.1.0
-  material_design_icons_flutter: ^4.0.5555
+  material_design_icons_flutter: ^4.0.5655
   animations: ^1.1.2
   adaptive_breakpoints: ^0.0.3
-  provider: ^4.3.2+1
+  provider: ^4.3.2+2
 
 
   # The following adds the Cupertino Icons font to your application.

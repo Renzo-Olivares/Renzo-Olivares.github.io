@@ -7,7 +7,6 @@ import 'model/portfolio_state.dart';
 import 'pages/about_page.dart';
 import 'pages/projects_page.dart';
 import 'pages/resume_page.dart';
-import 'pages/work_page.dart';
 
 class _Destination {
   const _Destination({this.unselectedIcon, this.selectedIcon, this.title});
@@ -27,11 +26,11 @@ final destinations = [
     selectedIcon: Icons.lightbulb,
     title: 'Projects',
   ),
-  _Destination(
-    unselectedIcon: Icons.work_outline,
-    selectedIcon: Icons.work,
-    title: 'Work',
-  ),
+  // _Destination(
+  //   unselectedIcon: Icons.work_outline,
+  //   selectedIcon: Icons.work,
+  //   title: 'Work',
+  // ),
   _Destination(
     unselectedIcon: Icons.assignment_outlined,
     selectedIcon: Icons.assignment,
@@ -52,7 +51,7 @@ class _AdaptiveNavState extends State<AdaptiveNav> {
   final _pages = [
     const AboutPage(),
     const ProjectsPage(),
-    const WorkPage(),
+    // const WorkPage(),
     const ResumePage(),
   ];
 

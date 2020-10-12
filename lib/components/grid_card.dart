@@ -1,12 +1,15 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 
+import '../helpers/url_launcher.dart';
+
 class GridCard extends StatelessWidget {
   const GridCard({
     this.darkPreview,
     this.lightPreview,
     this.title,
     this.year,
+    this.gitLink,
     this.openChild,
   });
 
@@ -14,6 +17,7 @@ class GridCard extends StatelessWidget {
   final String lightPreview;
   final String title;
   final String year;
+  final String gitLink;
   final Widget openChild;
 
   @override
@@ -55,7 +59,7 @@ class GridCard extends StatelessWidget {
               ),
             ),
             InkWell(
-              onTap: openContainer,
+              onTap: () => UrlLauncher.launchURL(gitLink, title),
             ),
           ],
         );
