@@ -25809,12 +25809,12 @@ $2(a,b){var s,r,q,p,o,n,m,l,k,j=null,i="childList",h=B.b.gV(a),g=this.a,f=g.p2,e
 for(;h.n();){s=h.gJ()
 s.toString
 A.d0(s)
-if(J.d(s.type,i)&&A.T1(s)!=null&&!A.T1(s).gY(0)){A.ah8("mutation - removing nodes")
-for(r=0;r<J.ai(A.T1(s).a.length);++r)if(f.C(0,A.T1(s).c4(0,r))){q=g.d
+if(J.d(s.type,"attributes")||J.d(s.attributeName,"style"))A.ah8("record type: "+A.k(s.type)+", name "+A.k(s.attributeName))
+if(J.d(s.type,i)&&A.T1(s)!=null&&!A.T1(s).gY(0))for(r=0;r<J.ai(A.T1(s).a.length);++r)if(f.C(0,A.T1(s).c4(0,r))){q=g.d
 if(q.x!==B.xx){g.d=q.Mj(B.xx)
 A.eL(j,j)
 q=g.y
-if(q!=null)A.eL(q,g.z)}}}if(J.d(s.type,i)&&A.T0(s)!=null&&!A.T0(s).gY(0))for(r=0;r<J.ai(A.T0(s).a.length);++r){p=A.T0(s).c4(0,r)
+if(q!=null)A.eL(q,g.z)}}if(J.d(s.type,i)&&A.T0(s)!=null&&!A.T0(s).gY(0))for(r=0;r<J.ai(A.T0(s).a.length);++r){p=A.T0(s).c4(0,r)
 o=p.nodeName
 if(o!=null&&o==="STYLE"){f.D(0,p)
 q=e.document.documentElement
