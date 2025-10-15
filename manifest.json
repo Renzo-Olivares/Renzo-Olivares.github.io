@@ -1,6 +1,6 @@
 {
-    "name": "selectionplayground",
-    "short_name": "selectionplayground",
+    "name": "onlyselectionarea",
+    "short_name": "onlyselectionarea",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
